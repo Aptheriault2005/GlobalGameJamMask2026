@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://bgx0d0pkv23y"]
+
+[ext_resource type="PackedScene" uid="uid://c7utcfcamvtju" path="res://hello_world.tscn" id="1_557in"]
+
+[node name="AndrewTestScene" type="Node2D" unique_id=211426458]
+
+[node name="HelloWorld" parent="." unique_id=1549354517 instance=ExtResource("1_557in")]
