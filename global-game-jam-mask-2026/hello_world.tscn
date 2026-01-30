@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://c7utcfcamvtju"]
+
+[ext_resource type="Script" uid="uid://c1874uk6y4bds" path="res://HelloWorld.cs" id="1_kqpgu"]
+
+[node name="HelloWorld" type="Node2D" unique_id=1549354517]
+script = ExtResource("1_kqpgu")
