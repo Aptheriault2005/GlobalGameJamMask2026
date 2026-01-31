@@ -1,14 +1,58 @@
 [gd_scene format=3 uid="uid://cnd7swoerisex"]
 
-[ext_resource type="Script" uid="uid://dsv7mlwbmjj0" path="res://LevisCode/CharacterBody2d.cs" id="1_87ho7"]
-[ext_resource type="Texture2D" uid="uid://bjo1bpib07bbm" path="res://icon.svg" id="2_p4vec"]
+[ext_resource type="Script" uid="uid://dsv7mlwbmjj0" path="res://LevisCode/PlayerController.cs" id="1_87ho7"]
 [ext_resource type="PackedScene" uid="uid://csq40tlrrhraw" path="res://LevisCode/player_bullet.tscn" id="2_qpehj"]
+[ext_resource type="Texture2D" uid="uid://chnyk8bvmenf1" path="res://LevisArt/playerFront.png" id="3_rhlbj"]
+[ext_resource type="Texture2D" uid="uid://dgx8eio2nocrl" path="res://LevisArt/playerLeft.png" id="4_pebfi"]
 [ext_resource type="Script" uid="uid://cfuck17e57r67" path="res://LevisCode/GhostbusterSprayPattern.cs" id="4_qpehj"]
+[ext_resource type="Texture2D" uid="uid://1xh6tuiiqsd8" path="res://LevisArt/playerRight.png" id="5_fo3bd"]
 [ext_resource type="Script" uid="uid://ct7vynlkndnlj" path="res://LevisCode/SpiralSprayPattern.cs" id="5_ydxxq"]
+[ext_resource type="Texture2D" uid="uid://cjdd3caajlg6a" path="res://LevisArt/playerBack.png" id="6_57wcj"]
 [ext_resource type="Script" uid="uid://6bxs3hc2qs18" path="res://LevisCode/PulseSprayPattern.cs" id="6_rhlbj"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_qpehj"]
-size = Vector2(64, 64)
+[sub_resource type="SpriteFrames" id="SpriteFrames_x0lkq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_rhlbj")
+}],
+"loop": true,
+"name": &"Move_down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_pebfi")
+}],
+"loop": true,
+"name": &"Move_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_fo3bd")
+}],
+"loop": true,
+"name": &"Move_right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_57wcj")
+}],
+"loop": true,
+"name": &"Move_up",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pebfi"]
+radius = 12.0
+height = 52.0
 
 [node name="PlayerController" type="CharacterBody2D" unique_id=572176088 node_paths=PackedStringArray("gbsp", "ssp", "psp")]
 script = ExtResource("1_87ho7")
@@ -17,14 +61,14 @@ ssp = NodePath("SpiralSprayPattern")
 psp = NodePath("PulseSprayPattern")
 bullet = ExtResource("2_qpehj")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=430540736]
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("2_p4vec")
+[node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=755048273]
+sprite_frames = SubResource("SpriteFrames_x0lkq")
+animation = &"Move_up"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=600340323]
-shape = SubResource("RectangleShape2D_qpehj")
+shape = SubResource("CapsuleShape2D_pebfi")
 
-[node name="GhostbusterSprayPattern" type="Node2D" parent="." unique_id=459109748]
+[node name="GhostbusterSprayPattern" type="Node" parent="." unique_id=79133439]
 script = ExtResource("4_qpehj")
 
 [node name="Direction" type="Timer" parent="GhostbusterSprayPattern" unique_id=1638185909]
@@ -37,7 +81,7 @@ process_callback = 0
 wait_time = 0.05
 one_shot = true
 
-[node name="SpiralSprayPattern" type="Node2D" parent="." unique_id=749321140]
+[node name="SpiralSprayPattern" type="Node" parent="." unique_id=1193971785]
 script = ExtResource("5_ydxxq")
 
 [node name="Direction" type="Timer" parent="SpiralSprayPattern" unique_id=1624730965]
@@ -50,10 +94,12 @@ process_callback = 0
 wait_time = 0.05
 one_shot = true
 
-[node name="PulseSprayPattern" type="Node2D" parent="." unique_id=256556993]
+[node name="PulseSprayPattern" type="Node" parent="." unique_id=1921330667]
 script = ExtResource("6_rhlbj")
 
 [node name="Cooldown" type="Timer" parent="PulseSprayPattern" unique_id=121543]
 process_callback = 0
 wait_time = 0.2
 one_shot = true
+
+[node name="PlayerTag" type="Node" parent="." unique_id=1187244770]

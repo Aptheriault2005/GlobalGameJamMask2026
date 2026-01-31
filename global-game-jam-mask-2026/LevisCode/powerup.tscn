@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://s4dyu8m8m6s7"]
+
+[ext_resource type="Script" uid="uid://mgx8mh7t6l6q" path="res://LevisCode/Powerup.cs" id="1_yr5t0"]
+[ext_resource type="Texture2D" uid="uid://faoka3mkiaw4" path="res://LevisArt/grapes.png" id="2_yr5t0"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dn8oj"]
+radius = 18.027756
+
+[node name="powerup" type="Area2D" unique_id=1033952227]
+script = ExtResource("1_yr5t0")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1777160887]
+texture = ExtResource("2_yr5t0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1972731712]
+shape = SubResource("CircleShape2D_dn8oj")
+
+[connection signal="body_entered" from="." to="." method="BodyEntered"]

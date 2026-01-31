@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://c4ry0e4el635h"]
+
+[ext_resource type="Script" uid="uid://xn3yesnlqte1" path="res://LevisCode/PowerupSpawner.cs" id="1_sdxkq"]
+
+[node name="PowerupSpawner" type="Node2D" unique_id=1576011739]
+script = ExtResource("1_sdxkq")
+
+[node name="Timer" type="Timer" parent="." unique_id=519706465]
+wait_time = 10.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="Timeout"]
