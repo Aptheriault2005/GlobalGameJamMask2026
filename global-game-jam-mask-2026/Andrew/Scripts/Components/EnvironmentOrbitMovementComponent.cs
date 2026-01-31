@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class PlayerOrbitMovementComponent : Node
+public partial class EnvironmentOrbitMovementComponent : Node
 {
     [Export] public BaseEnemy Enemy { get; private set; }
     [Export] public Node2D OrbitSlotNode { get; private set; }
@@ -11,7 +11,7 @@ public partial class PlayerOrbitMovementComponent : Node
 
     public override void _Ready()
     {
-        OrbitPoint orbitNode = EnemyManager.enemyManager.FindValidPlayerOrbitPoint();
+        OrbitPoint orbitNode = EnemyManager.enemyManager.FindValidEnvironmentOrbitPoint();
         SetOrbitSlotNode(orbitNode);
     }
 

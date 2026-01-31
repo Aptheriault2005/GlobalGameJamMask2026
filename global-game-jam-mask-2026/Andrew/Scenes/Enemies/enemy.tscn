@@ -1,20 +1,6 @@
 [gd_scene format=3 uid="uid://ckllt2gc3x1pr"]
 
-[ext_resource type="Script" uid="uid://cqdgw6bp0yimn" path="res://Andrew/Scripts/Enemies/BaseEnemy.cs" id="1_2pb1h"]
-[ext_resource type="Texture2D" uid="uid://bjo1bpib07bbm" path="res://icon.svg" id="2_px1sc"]
-[ext_resource type="PackedScene" uid="uid://byt6pduwlenmf" path="res://Andrew/Scenes/Components/health_component.tscn" id="3_am0pq"]
-[ext_resource type="PackedScene" uid="uid://8crl4hlg5d8t" path="res://Andrew/Scenes/Components/player_orbit_movement_component.tscn" id="4_eqilm"]
+[ext_resource type="Script" uid="uid://cqdgw6bp0yimn" path="res://Andrew/Scripts/Enemies/BaseEnemy.cs" id="1_73oxx"]
 
-[node name="Enemy" type="Node2D" unique_id=1868127743 node_paths=PackedStringArray("healthComponent")]
-script = ExtResource("1_2pb1h")
-healthComponent = NodePath("HealthComponent")
-
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1382075332]
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("2_px1sc")
-
-[node name="HealthComponent" parent="." unique_id=1188606346 instance=ExtResource("3_am0pq")]
-MaxHealth = 50.0
-
-[node name="OrbitMovementComponent" parent="." unique_id=683472997 node_paths=PackedStringArray("Enemy") instance=ExtResource("4_eqilm")]
-Enemy = NodePath("..")
+[node name="Enemy" type="Node2D" unique_id=1868127743]
+script = ExtResource("1_73oxx")

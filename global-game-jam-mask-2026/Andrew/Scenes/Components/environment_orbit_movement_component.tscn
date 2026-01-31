@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://gkgfmjd1qvf1"]
+
+[ext_resource type="Script" uid="uid://b3al2miqj3paw" path="res://Andrew/Scripts/Components/EnvironmentOrbitMovementComponent.cs" id="1_hpxka"]
+
+[node name="EnvironmentOrbitMovementComponent" type="Node" unique_id=1826922020 node_paths=PackedStringArray("MoveInTimer")]
+script = ExtResource("1_hpxka")
+MoveInTimer = NodePath("MoveInTimer")
+
+[node name="MoveInTimer" type="Timer" parent="." unique_id=1193071652]
+one_shot = true
+autostart = true
