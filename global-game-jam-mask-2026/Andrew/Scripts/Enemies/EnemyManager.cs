@@ -5,8 +5,7 @@ using System.Linq;
 
 public partial class EnemyManager : Node
 {
-    // CHANGE TO PLAYER CLASS
-    [Export] public TestCharacter player;
+    private PlayerController player;
     [Export] public Timer SpawnTimer { get; private set; }
     [Export] public Node2D PlayerOrbitsContainer { get; private set; }
     [Export] public Node2D EnvironmentOrbitsContainer { get; private set; }
@@ -25,8 +24,7 @@ public partial class EnemyManager : Node
 
     public override void _Ready()
     {
-        // CHANGE TO PLAYER CLASS
-        player = TestCharacter.currentPlayer;
+        player = PlayerController.Player;
     }
 
     public override void _PhysicsProcess(double delta)
