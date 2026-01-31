@@ -1,0 +1,86 @@
+[gd_scene format=3 uid="uid://b00xfak8t2663"]
+
+[ext_resource type="Script" uid="uid://baqq0kkudibyf" path="res://Andrew/Scripts/Enemies/EnemyManager.cs" id="1_jcgge"]
+[ext_resource type="PackedScene" uid="uid://daka4g3q0tb5x" path="res://Andrew/Scenes/Enemies/player_orbit_enemy.tscn" id="2_thm0t"]
+[ext_resource type="PackedScene" uid="uid://dcmaa2ngxalr7" path="res://Andrew/Scenes/Enemies/environment_orbit_enemy.tscn" id="3_1eqb4"]
+[ext_resource type="PackedScene" uid="uid://dj4vcwfgsebg7" path="res://Andrew/Scenes/Orbit/orbit_point_generator.tscn" id="3_kdjgt"]
+
+[node name="EnemyManager" type="Node" unique_id=1456131449 node_paths=PackedStringArray("SpawnTimer", "PlayerOrbitsContainer", "EnvironmentOrbitsContainer", "EnemyContainer")]
+script = ExtResource("1_jcgge")
+SpawnTimer = NodePath("SpawnTimer")
+PlayerOrbitsContainer = NodePath("PlayerOrbits")
+EnvironmentOrbitsContainer = NodePath("EnvironmentOrbits")
+EnemyContainer = NodePath("EnemyContainer")
+PlayerOrbitEnemyScene = ExtResource("2_thm0t")
+EnvironmentOrbitEnemyScene = ExtResource("3_1eqb4")
+
+[node name="SpawnTimer" type="Timer" parent="." unique_id=297650743]
+wait_time = 0.1
+autostart = true
+
+[node name="EnemyContainer" type="Node" parent="." unique_id=832648660]
+
+[node name="PlayerOrbits" type="Node2D" parent="." unique_id=1734932578]
+
+[node name="OrbitPointGenerator" parent="PlayerOrbits" unique_id=1340243254 instance=ExtResource("3_kdjgt")]
+OrbitSpeed = 1.25
+OrbitPointCount = 5
+OrbitPointDistance = 200.0
+
+[node name="OrbitPointGenerator2" parent="PlayerOrbits" unique_id=1937829038 instance=ExtResource("3_kdjgt")]
+OrbitSpeed = -1.0
+OrbitPointCount = 7
+OrbitPointDistance = 300.0
+
+[node name="OrbitPointGenerator3" parent="PlayerOrbits" unique_id=1751977099 instance=ExtResource("3_kdjgt")]
+OrbitSpeed = 0.75
+OrbitPointCount = 16
+OrbitPointDistance = 400.0
+
+[node name="OrbitPointGenerator4" parent="PlayerOrbits" unique_id=808899643 instance=ExtResource("3_kdjgt")]
+OrbitSpeed = -0.5
+OrbitPointCount = 16
+OrbitPointDistance = 500.0
+
+[node name="EnvironmentOrbits" type="Node2D" parent="." unique_id=1727916854]
+
+[node name="OrbitPointGenerator" parent="EnvironmentOrbits" unique_id=1540710573 instance=ExtResource("3_kdjgt")]
+position = Vector2(300, 300)
+OrbitPointCount = 5
+OrbitPointDistance = 250.0
+
+[node name="OrbitPointGenerator2" parent="EnvironmentOrbits" unique_id=305257646 instance=ExtResource("3_kdjgt")]
+position = Vector2(300, 780)
+OrbitPointCount = 5
+OrbitPointDistance = 250.0
+
+[node name="OrbitPointGenerator3" parent="EnvironmentOrbits" unique_id=936617762 instance=ExtResource("3_kdjgt")]
+position = Vector2(1620, 780)
+OrbitSpeed = -1.0
+OrbitPointCount = 5
+OrbitPointDistance = 250.0
+
+[node name="OrbitPointGenerator4" parent="EnvironmentOrbits" unique_id=9265544 instance=ExtResource("3_kdjgt")]
+position = Vector2(1620, 300)
+OrbitSpeed = -1.0
+OrbitPointCount = 5
+OrbitPointDistance = 250.0
+
+[node name="OrbitPointGenerator5" parent="EnvironmentOrbits" unique_id=1574876640 instance=ExtResource("3_kdjgt")]
+position = Vector2(960, 540)
+OrbitPointCount = 11
+OrbitPointDistance = 400.0
+
+[node name="OrbitPointGenerator6" parent="EnvironmentOrbits" unique_id=456344109 instance=ExtResource("3_kdjgt")]
+position = Vector2(960, 810)
+OrbitSpeed = -1.0
+OrbitPointCount = 3
+OrbitPointDistance = 200.0
+
+[node name="OrbitPointGenerator7" parent="EnvironmentOrbits" unique_id=882190970 instance=ExtResource("3_kdjgt")]
+position = Vector2(960, 270)
+OrbitSpeed = -1.0
+OrbitPointCount = 3
+OrbitPointDistance = 200.0
+
+[connection signal="timeout" from="SpawnTimer" to="." method="OnTimerTimeout"]

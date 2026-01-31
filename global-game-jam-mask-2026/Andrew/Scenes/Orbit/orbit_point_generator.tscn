@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://dj4vcwfgsebg7"]
+
+[ext_resource type="Script" uid="uid://baace7cq61x4p" path="res://Andrew/Scripts/Orbit/OrbitPointGenerator.cs" id="1_j8hxi"]
+[ext_resource type="PackedScene" uid="uid://e7kjt3ari22d" path="res://Andrew/Scenes/Orbit/orbit_point.tscn" id="2_dc0ti"]
+
+[node name="OrbitPointGenerator" type="Node2D" unique_id=1340243254]
+script = ExtResource("1_j8hxi")
+PointScene = ExtResource("2_dc0ti")

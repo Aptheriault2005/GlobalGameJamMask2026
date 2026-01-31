@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://daka4g3q0tb5x"]
+
+[ext_resource type="Script" uid="uid://djkkig0r3vhrg" path="res://Andrew/Scripts/Enemies/PlayerOrbitEnemy.cs" id="1_05q40"]
+[ext_resource type="Texture2D" uid="uid://bjo1bpib07bbm" path="res://icon.svg" id="1_srn1l"]
+[ext_resource type="PackedScene" uid="uid://byt6pduwlenmf" path="res://Andrew/Scenes/Components/health_component.tscn" id="2_uigks"]
+[ext_resource type="PackedScene" uid="uid://8crl4hlg5d8t" path="res://Andrew/Scenes/Components/player_orbit_movement_component.tscn" id="3_05q40"]
+
+[node name="PlayerOrbitEnemy" type="Node2D" unique_id=871318963 node_paths=PackedStringArray("healthComponent", "playerOrbitMovementComponent")]
+script = ExtResource("1_05q40")
+healthComponent = NodePath("HealthComponent")
+playerOrbitMovementComponent = NodePath("OrbitMovementComponent")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1044937737]
+modulate = Color(0, 1, 0.47843137, 1)
+texture = ExtResource("1_srn1l")
+
+[node name="HealthComponent" parent="." unique_id=1188606346 instance=ExtResource("2_uigks")]
+MaxHealth = 100.0
+
+[node name="OrbitMovementComponent" parent="." unique_id=683472997 node_paths=PackedStringArray("Enemy") instance=ExtResource("3_05q40")]
+Enemy = NodePath("..")
