@@ -1,12 +1,20 @@
 using Godot;
 using System;
+using System.Collections.Generic;
 
-public partial class StartButton : Button
+public partial class Globals : Node
 {
+	public static Globals Instance {get; private set;}
+	public string PrevScene {get; set;}
+	
+	//Better way?
+	
+	public bool Started {get; set;}
+	
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		Globals.Instance.PrevScene = "res://title_screen.tscn";
+		Instance = this;
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -14,8 +22,4 @@ public partial class StartButton : Button
 	{
 	}
 	
-	public override void _Pressed() {
-		GetTree().ChangeSceneToFile("res://testing.tscn");
-		Globals.Instance.Started = true;
-	}
 }

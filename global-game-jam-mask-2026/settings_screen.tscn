@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://b0vxpqymybk7p"]
 
 [ext_resource type="Script" uid="uid://lugcrtobc635" path="res://QuitButton.cs" id="1_00yke"]
+[ext_resource type="Script" uid="uid://bk2dbh0oy0w2a" path="res://ControlsButton.cs" id="1_b5707"]
+[ext_resource type="Script" uid="uid://b4hs06cckm0wq" path="res://BackButton.cs" id="2_pfwel"]
 
 [node name="SettingsScreen" type="CanvasLayer" unique_id=917333332]
 
@@ -19,6 +21,7 @@ theme_override_constants/separation = 100
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
 text = "Controls"
+script = ExtResource("1_b5707")
 
 [node name="ResolutionButton" type="Button" parent="CenterContainer/HBoxContainer" unique_id=1131888511]
 layout_mode = 2
@@ -54,3 +57,4 @@ script = ExtResource("1_00yke")
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
 text = "Back"
+script = ExtResource("2_pfwel")

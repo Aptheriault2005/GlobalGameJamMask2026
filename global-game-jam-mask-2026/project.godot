@@ -15,6 +15,10 @@ run/main_scene="uid://c6cb0xbfc8lwc"
 config/features=PackedStringArray("4.6", "C#", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Globals="*uid://d1lollqdj0qq1"
+
 [dotnet]
 
 project/assembly_name="GlobalGameJamMask2026"

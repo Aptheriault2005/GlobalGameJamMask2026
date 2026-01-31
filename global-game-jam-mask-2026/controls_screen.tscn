@@ -1,6 +1,11 @@
 [gd_scene format=3 uid="uid://cjwpbi4utbj87"]
 
+[ext_resource type="Script" uid="uid://b4june4pyaxj3" path="res://ControlsScreen.cs" id="1_lw34d"]
+[ext_resource type="Script" uid="uid://knvm4d4slakw" path="res://RemapLeft.cs" id="2_ffnw4"]
+[ext_resource type="Script" uid="uid://b4hs06cckm0wq" path="res://BackButton.cs" id="2_j3dus"]
+
 [node name="ControlsScreen" type="CanvasLayer" unique_id=1715792745]
+script = ExtResource("1_lw34d")
 
 [node name="CenterContainer" type="CenterContainer" parent="." unique_id=1067645523]
 anchors_preset = 14
@@ -11,3 +16,20 @@ offset_top = -200.0
 offset_bottom = 200.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer" unique_id=1506139051]
+layout_mode = 2
+theme_override_constants/separation = 75
+
+[node name="RemapLeft" type="Button" parent="CenterContainer/VBoxContainer" unique_id=847712360]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Left: 
+"
+script = ExtResource("2_ffnw4")
+
+[node name="BackButton" type="Button" parent="CenterContainer/VBoxContainer" unique_id=2106541615]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Back"
+script = ExtResource("2_j3dus")
