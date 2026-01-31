@@ -4,31 +4,48 @@ using System;
 public partial class CharacterBody2d : CharacterBody2D
 {
 	public const float Speed = 300.0f;
-	private Timer cooldown;
-	private Timer bulletDirection;
+	[Export] private GhostbusterSprayPattern gbsp;
+	[Export] private SpiralSprayPattern ssp;
+	[Export] private PulseSprayPattern psp;
+	private int sprayPattern = 0;
 	
 	[Export]
 	public PackedScene bullet { get; set; }
 
-	public override void _Ready()
-	{
-		cooldown = GetNode<Timer>("Cooldown");
-		bulletDirection = GetNode<Timer>("Direction");
-	}
-
 	public override void _PhysicsProcess(double delta)
 	{
-		if (Input.IsActionPressed("fire") && cooldown.TimeLeft == 0)
+		if (Input.IsActionPressed("fire"))
 		{
-			Node2D b = ResourceLoader.Load<PackedScene>("res://LevisCode/player_bullet.tscn").Instantiate<Node2D>();
-			AddSibling(b);
-			b.Position = Position;
-			b.Rotation = (float)bulletDirection.TimeLeft * 5;
-			Node2D b2 = ResourceLoader.Load<PackedScene>("res://LevisCode/player_bullet.tscn").Instantiate<Node2D>();
-			AddSibling(b2);
-			b2.Position = Position;
-			b2.Rotation = -(float)bulletDirection.TimeLeft * 5;
-			cooldown.Start();
+			switch (sprayPattern)
+			{
+				case 0:
+					gbsp.Spray();
+					break;
+				case 1:
+					ssp.Spray();
+					break;
+				case 2:
+					psp.Spray();
+					break;
+			}
+		}
+		
+		if (Input.IsActionJustPressed("DEBUG_switch"))
+		{
+			if (sprayPattern == 2) sprayPattern = 0;
+			else sprayPattern++;
+			switch (sprayPattern)
+			{
+				case 0:
+					GD.Print("Ghostbuster");
+					break;
+				case 1:
+					GD.Print("Spiral");
+					break;
+				case 2:
+					GD.Print("Pulse");
+					break;
+			}
 		}
 		
 		//----------------------//

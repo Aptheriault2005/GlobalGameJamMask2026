@@ -3,12 +3,18 @@
 [ext_resource type="Script" uid="uid://dsv7mlwbmjj0" path="res://LevisCode/CharacterBody2d.cs" id="1_87ho7"]
 [ext_resource type="Texture2D" uid="uid://bjo1bpib07bbm" path="res://icon.svg" id="2_p4vec"]
 [ext_resource type="PackedScene" uid="uid://csq40tlrrhraw" path="res://LevisCode/player_bullet.tscn" id="2_qpehj"]
+[ext_resource type="Script" uid="uid://cfuck17e57r67" path="res://LevisCode/GhostbusterSprayPattern.cs" id="4_qpehj"]
+[ext_resource type="Script" uid="uid://ct7vynlkndnlj" path="res://LevisCode/SpiralSprayPattern.cs" id="5_ydxxq"]
+[ext_resource type="Script" uid="uid://6bxs3hc2qs18" path="res://LevisCode/PulseSprayPattern.cs" id="6_rhlbj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qpehj"]
 size = Vector2(64, 64)
 
-[node name="PlayerController" type="CharacterBody2D" unique_id=572176088]
+[node name="PlayerController" type="CharacterBody2D" unique_id=572176088 node_paths=PackedStringArray("gbsp", "ssp", "psp")]
 script = ExtResource("1_87ho7")
+gbsp = NodePath("GhostbusterSprayPattern")
+ssp = NodePath("SpiralSprayPattern")
+psp = NodePath("PulseSprayPattern")
 bullet = ExtResource("2_qpehj")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=430540736]
@@ -18,12 +24,36 @@ texture = ExtResource("2_p4vec")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=600340323]
 shape = SubResource("RectangleShape2D_qpehj")
 
-[node name="Direction" type="Timer" parent="." unique_id=1638185909]
+[node name="GhostbusterSprayPattern" type="Node2D" parent="." unique_id=459109748]
+script = ExtResource("4_qpehj")
+
+[node name="Direction" type="Timer" parent="GhostbusterSprayPattern" unique_id=1638185909]
 process_callback = 0
 wait_time = 6.283
 autostart = true
 
-[node name="Cooldown" type="Timer" parent="." unique_id=1357036766]
+[node name="Cooldown" type="Timer" parent="GhostbusterSprayPattern" unique_id=1357036766]
 process_callback = 0
 wait_time = 0.05
+one_shot = true
+
+[node name="SpiralSprayPattern" type="Node2D" parent="." unique_id=749321140]
+script = ExtResource("5_ydxxq")
+
+[node name="Direction" type="Timer" parent="SpiralSprayPattern" unique_id=1624730965]
+process_callback = 0
+wait_time = 6.283
+autostart = true
+
+[node name="Cooldown" type="Timer" parent="SpiralSprayPattern" unique_id=135618703]
+process_callback = 0
+wait_time = 0.05
+one_shot = true
+
+[node name="PulseSprayPattern" type="Node2D" parent="." unique_id=256556993]
+script = ExtResource("6_rhlbj")
+
+[node name="Cooldown" type="Timer" parent="PulseSprayPattern" unique_id=121543]
+process_callback = 0
+wait_time = 0.2
 one_shot = true
