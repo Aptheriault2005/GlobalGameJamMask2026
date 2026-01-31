@@ -1,9 +1,0 @@
-[gd_scene format=3 uid="uid://cmc1kbmldi7j5"]
-
-[ext_resource type="Script" uid="uid://elinu55l3a6g" path="res://Enemy/EnemyController.cs" id="1_5hro4"]
-
-[node name="EnemyController" type="Node" unique_id=55893147 node_paths=PackedStringArray("Timer")]
-script = ExtResource("1_5hro4")
-Timer = NodePath("Timer")
-
-[node name="Timer" type="Timer" parent="." unique_id=325404608]

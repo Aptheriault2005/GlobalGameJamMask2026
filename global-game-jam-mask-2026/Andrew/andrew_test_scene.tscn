@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://bgx0d0pkv23y"]
+
+[ext_resource type="PackedScene" uid="uid://b00xfak8t2663" path="res://Andrew/Scenes/Enemies/enemy_manager.tscn" id="1_fnk4i"]
+[ext_resource type="PackedScene" uid="uid://d3nujahlynrrl" path="res://Andrew/Scenes/Player/test_character.tscn" id="2_jb6y8"]
+
+[node name="AndrewTestScene" type="Node2D" unique_id=211426458]
+
+[node name="EnemyManager" parent="." unique_id=1456131449 instance=ExtResource("1_fnk4i")]
+
+[node name="TestCharacter" parent="." unique_id=987941485 instance=ExtResource("2_jb6y8")]
+position = Vector2(560, 340)
+Speed = 500.0

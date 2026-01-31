@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://e7kjt3ari22d"]
+
+[ext_resource type="Script" uid="uid://dje5nfq8shd4r" path="res://Andrew/Scripts/Orbit/OrbitPoint.cs" id="1_e71tk"]
+[ext_resource type="Texture2D" uid="uid://bjo1bpib07bbm" path="res://icon.svg" id="2_yjb4u"]
+
+[node name="OrbitPoint" type="Node2D" unique_id=64533371]
+script = ExtResource("1_e71tk")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1989607315]
+modulate = Color(0, 0, 0, 1)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_yjb4u")

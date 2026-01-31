@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://8crl4hlg5d8t"]
+
+[ext_resource type="Script" uid="uid://qusd0pvw7q8b" path="res://Andrew/Scripts/Components/PlayerOrbitMovementComponent.cs" id="1_cmwmk"]
+
+[node name="OrbitMovementComponent" type="Node" unique_id=683472997 node_paths=PackedStringArray("MoveInTimer")]
+script = ExtResource("1_cmwmk")
+MoveInTimer = NodePath("MoveInTimer")
+
+[node name="MoveInTimer" type="Timer" parent="." unique_id=1430994512]
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="MoveInTimer" to="." method="OnMoveInTimerTimeout"]

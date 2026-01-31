@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://caafoh6bs06nn"]
+
+[ext_resource type="Script" uid="uid://flymk6vfeu2c" path="res://Andrew/Scripts/Components/RandomMovementComponent.cs" id="1_ipvfy"]
+
+[node name="RandomMovementComponent" type="Node" unique_id=749393131]
+script = ExtResource("1_ipvfy")

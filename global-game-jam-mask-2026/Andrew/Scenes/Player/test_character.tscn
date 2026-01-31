@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://d3nujahlynrrl"]
+
+[ext_resource type="Script" uid="uid://cckla0mdxow6c" path="res://Andrew/Scripts/Player/TestCharacter.cs" id="1_num78"]
+[ext_resource type="Texture2D" uid="uid://bjo1bpib07bbm" path="res://icon.svg" id="2_446ey"]
+[ext_resource type="PackedScene" uid="uid://byt6pduwlenmf" path="res://Andrew/Scenes/Components/health_component.tscn" id="3_d6e4m"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_idnci"]
+radius = 31.144823
+
+[node name="TestCharacter" type="CharacterBody2D" unique_id=1616888214 node_paths=PackedStringArray("healthComponent")]
+script = ExtResource("1_num78")
+healthComponent = NodePath("HealthComponent")
+metadata/player = true
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=293729852]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_446ey")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1425667482]
+shape = SubResource("CircleShape2D_idnci")
+
+[node name="HealthComponent" parent="." unique_id=1188606346 instance=ExtResource("3_d6e4m")]
+MaxHealth = 100.0
