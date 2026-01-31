@@ -11,7 +11,7 @@ public partial class ControlsButton : Button
 		
 		if (Globals.Instance.Started) {
 			//Change after merge
-			Globals.Instance.PrevScene = "res://Matthew/Scenes/testing.tscn";
+			Globals.Instance.PrevScene = "res://LevisCode/levis_gym.tscn";
 		}
 		else {
 			Globals.Instance.PrevScene = "res://Matthew/Scenes/title_screen.tscn";

@@ -7,6 +7,7 @@ public partial class PlayerController : CharacterBody2D
 	[Export] private GhostbusterSprayPattern gbsp;
 	[Export] private SpiralSprayPattern ssp;
 	[Export] private PulseSprayPattern psp;
+	[Export] private PauseMenu pm;
 	private AnimatedSprite2D playerSprite;
 	private int sprayPattern = 0;
 	private float sinTimer = 0.0f;
@@ -73,6 +74,12 @@ public partial class PlayerController : CharacterBody2D
 
 		Velocity = velocity;
 		MoveAndSlide();
+		
+		if (Input.IsActionPressed("ui_cancel"))
+		{
+			pm.Visible = true;
+			GetTree().Paused = true;
+		}
 	}
 	
 	public void SwapPowerup(int powerup)

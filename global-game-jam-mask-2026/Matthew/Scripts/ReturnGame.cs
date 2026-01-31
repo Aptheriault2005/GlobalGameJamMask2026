@@ -1,12 +1,17 @@
 using Godot;
 using System;
 
-public partial class StartButton : Button
+public partial class ReturnGame : Button
 {
+	
+	[Export] private PauseMenu pm;
+	
+	public static Button Rtrn;
+	
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		Globals.Instance.PrevScene = "res://Matthew/Scenes/title_screen.tscn";
+		Rtrn = this;
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -14,8 +19,9 @@ public partial class StartButton : Button
 	{
 	}
 	
-	public override void _Pressed() {
-		GetTree().ChangeSceneToFile("res://LevisCode/levis_gym.tscn");
-		Globals.Instance.Started = true;
+	public override void _Pressed() 
+	{
+		GetTree().Paused = false;
+		pm.Visible = false;
 	}
 }

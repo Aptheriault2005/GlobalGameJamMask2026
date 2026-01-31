@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://bhgq438e6t26j"]
+
+[ext_resource type="Script" uid="uid://cflsy7wrhymcs" path="res://Matthew/Scripts/TitleScreen.cs" id="1_la3vb"]
+[ext_resource type="Script" uid="uid://lugcrtobc635" path="res://Matthew/Scripts/QuitButton.cs" id="2_640rh"]
+
+[node name="EndScreen" type="CanvasLayer" unique_id=1451227434]
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1763307640]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer" unique_id=929176718]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CenterContainer/VBoxContainer" unique_id=1951687761]
+layout_mode = 2
+text = "Score: "
+
+[node name="TitleScreen" type="Button" parent="CenterContainer/VBoxContainer" unique_id=1604972536]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Return To Title Screen"
+script = ExtResource("1_la3vb")
+
+[node name="QuitButton" type="Button" parent="CenterContainer/VBoxContainer" unique_id=289387376]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Quit"
+script = ExtResource("2_640rh")

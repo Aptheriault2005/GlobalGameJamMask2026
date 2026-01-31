@@ -14,7 +14,7 @@ public partial class PowerupSpawner : Node2D
 
 	public void Timeout()
 	{
-		Position = new Vector2(rnd.Next(100, 900), -100);
+		Position = new Vector2(rnd.Next(100, 1800), -100);
 		Powerup p = ResourceLoader.Load<PackedScene>("res://LevisCode/powerup.tscn").Instantiate<Powerup>();
 		AddSibling(p);
 		p.Position = Position;
