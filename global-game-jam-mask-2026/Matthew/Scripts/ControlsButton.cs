@@ -10,11 +10,11 @@ public partial class ControlsButton : Button
 		// Brings player back to game if have started
 		
 		if (Globals.Instance.Started) {
-			//Globals.Instance.PrevScene = "res://testing.tscn";
-			// Needs to change after merge
+			//Change after merge
+			Globals.Instance.PrevScene = "res://Matthew/Scenes/testing.tscn";
 		}
 		else {
-			Globals.Instance.PrevScene = "res://title_screen.tscn";
+			Globals.Instance.PrevScene = "res://Matthew/Scenes/title_screen.tscn";
 		}
 	}
 
@@ -24,7 +24,7 @@ public partial class ControlsButton : Button
 	}
 	
 	public override void _Pressed() {
-		GetTree().ChangeSceneToFile("res://controls_screen.tscn");
+		GetTree().ChangeSceneToFile("res://Matthew/Scenes/controls_screen.tscn");
 	}
 	
 }

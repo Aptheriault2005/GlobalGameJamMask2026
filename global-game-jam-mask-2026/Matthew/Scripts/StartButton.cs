@@ -1,15 +1,12 @@
 using Godot;
 using System;
 
-public partial class SfxSlider : HSlider
+public partial class StartButton : Button
 {
-	int sfx;
-	
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		sfx = AudioServer.GetBusIndex("Sound Effects");
-		AudioServer.SetBusVolumeDb(sfx, Mathf.LinearToDb(1);
+		Globals.Instance.PrevScene = "res://Matthew/Scenes/title_screen.tscn";
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -17,7 +14,8 @@ public partial class SfxSlider : HSlider
 	{
 	}
 	
-	public void OnValueChanged(double value) {
-		AudioServer.SetBusVolumeDb(sfx, Mathf.LinearToDb((float) value));
+	public override void _Pressed() {
+		GetTree().ChangeSceneToFile("res://Matthew/Scenes/testing.tscn");
+		Globals.Instance.Started = true;
 	}
 }

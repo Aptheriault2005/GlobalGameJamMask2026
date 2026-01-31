@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class Testing : Area2D
+public partial class PlayerMovingTesting : Area2D
 {
 	[Export]
 	public int Speed {get; set;} = 400;
@@ -57,7 +57,7 @@ public partial class Testing : Area2D
 	
 	// Needs to change to settings overlay or smth
 	if (Input.IsActionPressed("ui_cancel")) {
-		GetTree().ChangeSceneToFile("res://settings_screen.tscn");
+		GetTree().ChangeSceneToFile("res://Matthew/Scenes/settings_screen.tscn");
 	}
 	
 	}

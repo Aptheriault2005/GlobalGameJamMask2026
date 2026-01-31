@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class SettingsButton : Button
+public partial class VolumeButton : Button
 {
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -14,6 +14,6 @@ public partial class SettingsButton : Button
 	}
 	
 	public override void _Pressed() {
-		GetTree().ChangeSceneToFile("res://settings_screen.tscn");
+		GetTree().ChangeSceneToFile("res://Matthew/Scenes/volume_screen.tscn");
 	}
 }

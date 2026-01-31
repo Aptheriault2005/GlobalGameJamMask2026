@@ -1,6 +1,4 @@
-[gd_scene format=3 uid="uid://cko8si5ebvgr1"]
-
-[ext_resource type="Script" uid="uid://cpmh6wgaj6xfv" path="res://Test.cs" id="1_5oaki"]
+[gd_scene format=3 uid="uid://crtdonqtbllws"]
 
 [node name="CanvasLayer" type="CanvasLayer" unique_id=1299319052]
 
@@ -15,4 +13,3 @@ grow_vertical = 2
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
 text = "start"
-script = ExtResource("1_5oaki")

@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://c6cb0xbfc8lwc"]
 
-[ext_resource type="Script" uid="uid://du5t6d8uo2bxe" path="res://StartButton.cs" id="1_ak2if"]
-[ext_resource type="Script" uid="uid://dheagwmtc8awr" path="res://SettingsButton.cs" id="2_ig5kc"]
-[ext_resource type="Script" uid="uid://lugcrtobc635" path="res://QuitButton.cs" id="3_ig5kc"]
+[ext_resource type="Script" uid="uid://du5t6d8uo2bxe" path="res://Matthew/Scripts/StartButton.cs" id="1_ak2if"]
+[ext_resource type="Script" uid="uid://dheagwmtc8awr" path="res://Matthew/Scripts/SettingsButton.cs" id="2_ig5kc"]
+[ext_resource type="Script" uid="uid://lugcrtobc635" path="res://Matthew/Scripts/QuitButton.cs" id="3_ig5kc"]
 
 [node name="TitleScreen" type="CanvasLayer" unique_id=1609603487]
 

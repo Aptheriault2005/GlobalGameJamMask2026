@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://r2c2loyereeo"]
 
-[ext_resource type="Script" uid="uid://bkcw2t5poeyoj" path="res://Testing.cs" id="1_co24e"]
-[ext_resource type="Texture2D" uid="uid://bjo1bpib07bbm" path="res://icon.svg" id="1_qrja6"]
+[ext_resource type="Script" uid="uid://bkcw2t5poeyoj" path="res://Matthew/Scripts/PlayerMovingTesting.cs" id="1_siu27"]
+[ext_resource type="Texture2D" uid="uid://bjo1bpib07bbm" path="res://icon.svg" id="2_sx6hp"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qrja6"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_qrja6")
+"texture": ExtResource("2_sx6hp")
 }],
 "loop": true,
 "name": &"default",
@@ -17,7 +17,7 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_qrja6"]
 
 [node name="Player" type="Area2D" unique_id=2118294170]
-script = ExtResource("1_co24e")
+script = ExtResource("1_siu27")
 
 [node name="animsprite2d" type="AnimatedSprite2D" parent="." unique_id=586770787]
 position = Vector2(564, 253)

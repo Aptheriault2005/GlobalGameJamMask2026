@@ -1,10 +1,13 @@
 [gd_scene format=3 uid="uid://bowsr4q6nx647"]
 
-[ext_resource type="Script" uid="uid://ejj35wtfxshm" path="res://MasterSlider.cs" id="1_v0457"]
-[ext_resource type="Script" uid="uid://dj6qveyoalboo" path="res://MusicSlider.cs" id="2_t6y05"]
-[ext_resource type="Script" uid="uid://3xkwtpuaol07" path="res://SfxSlider.cs" id="3_un8rp"]
+[ext_resource type="Script" uid="uid://dnul0g6tthr78" path="res://Matthew/Scripts/VolumeScreen.cs" id="1_aock2"]
+[ext_resource type="Script" uid="uid://ejj35wtfxshm" path="res://Matthew/Scripts/MasterSlider.cs" id="1_orlhx"]
+[ext_resource type="Script" uid="uid://dj6qveyoalboo" path="res://Matthew/Scripts/MusicSlider.cs" id="2_aock2"]
+[ext_resource type="Script" uid="uid://3xkwtpuaol07" path="res://Matthew/Scripts/SfxSlider.cs" id="3_y2bq2"]
+[ext_resource type="Script" uid="uid://b4hs06cckm0wq" path="res://Matthew/Scripts/BackButton.cs" id="5_y2bq2"]
 
 [node name="VolumeScreen" type="CanvasLayer" unique_id=737545509]
+script = ExtResource("1_aock2")
 
 [node name="MasterSlider" type="HSlider" parent="." unique_id=2066449296]
 anchors_preset = 14
@@ -20,7 +23,7 @@ grow_vertical = 2
 max_value = 1.0
 step = 0.001
 value = 1.0
-script = ExtResource("1_v0457")
+script = ExtResource("1_orlhx")
 metadata/_edit_use_anchors_ = true
 
 [node name="MusicSlider" type="HSlider" parent="." unique_id=507421859]
@@ -37,7 +40,7 @@ grow_vertical = 2
 max_value = 1.0
 step = 0.001
 value = 1.0
-script = ExtResource("2_t6y05")
+script = ExtResource("2_aock2")
 metadata/_edit_use_anchors_ = true
 
 [node name="SFXSlider" type="HSlider" parent="." unique_id=663050635]
@@ -54,7 +57,7 @@ grow_vertical = 2
 max_value = 1.0
 step = 0.001
 value = 1.0
-script = ExtResource("3_un8rp")
+script = ExtResource("3_y2bq2")
 metadata/_edit_use_anchors_ = true
 
 [node name="MasterAudioStream" type="AudioStreamPlayer2D" parent="." unique_id=1800036171]
@@ -70,9 +73,9 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -250.0
-offset_top = 35.0
+offset_top = 235.0
 offset_right = 250.0
-offset_bottom = 75.0
+offset_bottom = 275.0
 grow_horizontal = 2
 theme_override_font_sizes/normal_font_size = 40
 text = "Master"
@@ -83,9 +86,9 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -250.0
-offset_top = 235.0
+offset_top = 435.0
 offset_right = 250.0
-offset_bottom = 275.0
+offset_bottom = 475.0
 grow_horizontal = 2
 theme_override_font_sizes/normal_font_size = 40
 text = "Music"
@@ -96,10 +99,26 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -250.0
-offset_top = 435.0
+offset_top = 635.0
 offset_right = 250.0
-offset_bottom = 475.0
+offset_bottom = 675.0
 grow_horizontal = 2
 theme_override_font_sizes/normal_font_size = 40
 text = "Sound Effects"
 horizontal_alignment = 1
+
+[node name="BackButton" type="Button" parent="." unique_id=1437093302]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -40.5
+offset_top = -180.0
+offset_right = 40.5
+offset_bottom = -132.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 40
+text = "Back"
+script = ExtResource("5_y2bq2")

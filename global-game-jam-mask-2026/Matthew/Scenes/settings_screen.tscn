@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://b0vxpqymybk7p"]
 
-[ext_resource type="Script" uid="uid://lugcrtobc635" path="res://QuitButton.cs" id="1_00yke"]
-[ext_resource type="Script" uid="uid://bk2dbh0oy0w2a" path="res://ControlsButton.cs" id="1_b5707"]
-[ext_resource type="Script" uid="uid://b4hs06cckm0wq" path="res://BackButton.cs" id="2_pfwel"]
-[ext_resource type="Script" uid="uid://vdeb372djkq5" path="res://VolumeButton.cs" id="2_pl6fm"]
+[ext_resource type="Script" uid="uid://bk2dbh0oy0w2a" path="res://Matthew/Scripts/ControlsButton.cs" id="1_lii5r"]
+[ext_resource type="Script" uid="uid://vdeb372djkq5" path="res://Matthew/Scripts/VolumeButton.cs" id="2_ieuc7"]
+[ext_resource type="Script" uid="uid://lugcrtobc635" path="res://Matthew/Scripts/QuitButton.cs" id="3_1e15r"]
+[ext_resource type="Script" uid="uid://b4hs06cckm0wq" path="res://Matthew/Scripts/BackButton.cs" id="4_r3rfl"]
 
 [node name="SettingsScreen" type="CanvasLayer" unique_id=917333332]
 
@@ -22,18 +22,13 @@ theme_override_constants/separation = 100
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
 text = "Controls"
-script = ExtResource("1_b5707")
-
-[node name="ResolutionButton" type="Button" parent="CenterContainer/HBoxContainer" unique_id=1131888511]
-layout_mode = 2
-theme_override_font_sizes/font_size = 40
-text = "Resolution"
+script = ExtResource("1_lii5r")
 
 [node name="VolumeButton" type="Button" parent="CenterContainer/HBoxContainer" unique_id=825173921]
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
 text = "Volume"
-script = ExtResource("2_pl6fm")
+script = ExtResource("2_ieuc7")
 
 [node name="CenterContainer2" type="CenterContainer" parent="." unique_id=946507683]
 anchors_preset = 12
@@ -53,10 +48,10 @@ layout_mode = 2
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
 text = "Quit"
-script = ExtResource("1_00yke")
+script = ExtResource("3_1e15r")
 
 [node name="BackButton" type="Button" parent="CenterContainer2/VBoxContainer" unique_id=272318086]
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
 text = "Back"
-script = ExtResource("2_pfwel")
+script = ExtResource("4_r3rfl")

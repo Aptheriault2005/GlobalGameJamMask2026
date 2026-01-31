@@ -1,20 +1,16 @@
 using Godot;
 using System;
 
-public partial class VolumeButton : Button
+public partial class VolumeScreen : CanvasLayer
 {
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
+		Globals.Instance.PrevScene = "res://Matthew/Scenes/settings_screen.tscn";
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
-	}
-	
-	public override void _Pressed() {
-		Globals.Instance.PrevScene = "res://settings_screen.tscn";
-		GetTree().ChangeSceneToFile("res://volume_screen.tscn");
 	}
 }
