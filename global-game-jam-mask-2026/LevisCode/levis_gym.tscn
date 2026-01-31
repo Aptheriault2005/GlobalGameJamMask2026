@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cnd7swoerisex" path="res://LevisCode/player_controller.tscn" id="1_sx6i8"]
 [ext_resource type="Texture2D" uid="uid://cnnr65rsw83at" path="res://LevisArt/bg-tile-hi.png" id="2_e5sw1"]
 [ext_resource type="Texture2D" uid="uid://cghau1lgfnuuh" path="res://LevisArt/bg-tile-low.png" id="3_gjjle"]
-[ext_resource type="Texture2D" uid="uid://djbe7ab0fnqyn" path="res://LevisArt/TitleEmblem.png" id="5_hew2x"]
+[ext_resource type="Script" uid="uid://codqjpcxewftc" path="res://LevisCode/Score.cs" id="5_hew2x"]
 
 [node name="Levis-Gym" type="Node2D" unique_id=1031575374]
 
@@ -30,6 +30,19 @@ position = Vector2(500, 400)
 [node name="PlayerController" parent="." unique_id=572176088 instance=ExtResource("1_sx6i8")]
 position = Vector2(500, 400)
 
-[node name="TitleEmblem" type="Sprite2D" parent="." unique_id=915537336]
-position = Vector2(594, 109)
-texture = ExtResource("5_hew2x")
+[node name="Control" type="Control" parent="." unique_id=1627813428]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="Score" type="Label" parent="Control" unique_id=1633744105]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 76.0
+grow_horizontal = 2
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("5_hew2x")

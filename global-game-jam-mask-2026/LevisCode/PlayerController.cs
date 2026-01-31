@@ -77,7 +77,7 @@ public partial class PlayerController : CharacterBody2D
 	
 	public void SwapPowerup(int powerup)
 	{
-		GD.Print("swap me please");
 		sprayPattern = powerup;
+		Score.AddScore(100);
 	}
 }
