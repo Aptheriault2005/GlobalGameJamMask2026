@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://b3wncjh7x3j47"]
+
+[ext_resource type="Script" uid="uid://ld0eihsuaxjs" path="res://Enemy.cs" id="1_2pb1h"]
+[ext_resource type="Texture2D" uid="uid://bjo1bpib07bbm" path="res://icon.svg" id="2_px1sc"]
+[ext_resource type="PackedScene" uid="uid://cmc1kbmldi7j5" path="res://Enemy/enemy_controller.tscn" id="3_am0pq"]
+
+[node name="Enemy" type="Node2D" unique_id=1818569185 node_paths=PackedStringArray("enemyController")]
+script = ExtResource("1_2pb1h")
+enemyController = NodePath("EnemyController")
+MoveSpeed = 100.0
+OrbitFrequency = 2.0
+OrbitDistance = 300.0
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=942160391]
+modulate = Color(1, 0, 0, 1)
+texture = ExtResource("2_px1sc")
+
+[node name="EnemyController" parent="." unique_id=55893147 node_paths=PackedStringArray("Enemy") instance=ExtResource("3_am0pq")]
+Enemy = NodePath("..")

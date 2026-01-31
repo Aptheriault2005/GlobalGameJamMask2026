@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://d3nujahlynrrl"]
+
+[ext_resource type="Script" uid="uid://cckla0mdxow6c" path="res://Player/TestCharacter.cs" id="1_num78"]
+[ext_resource type="Texture2D" uid="uid://bjo1bpib07bbm" path="res://icon.svg" id="2_446ey"]
+
+[node name="TestCharacter" type="Node2D" unique_id=987941485]
+script = ExtResource("1_num78")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=293729852]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_446ey")
