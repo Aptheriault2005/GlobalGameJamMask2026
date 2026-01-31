@@ -1,15 +1,15 @@
 using Godot;
 using System;
 
-public partial class RemapLeft : Button
+public partial class RemapDown : Button
 {
-	public static Button RmpLeft;
+	public static Button RmpDown;
 	
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		this.SetText("Left: " + InputMap.ActionGetEvents("ui_left")[0].AsText());
-		RmpLeft = this;
+		this.SetText("Down: " + InputMap.ActionGetEvents("ui_down")[0].AsText());
+		RmpDown = this;
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -18,6 +18,6 @@ public partial class RemapLeft : Button
 	}
 	
 	public override void _Pressed() {
-		WaitUserInput.wui.Remapping("left");
+		WaitUserInput.wui.Remapping("down");
 	}
 }
