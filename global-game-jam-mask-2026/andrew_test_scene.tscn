@@ -1,16 +1,12 @@
 [gd_scene format=3 uid="uid://bgx0d0pkv23y"]
 
-[ext_resource type="PackedScene" uid="uid://c7utcfcamvtju" path="res://hello_world.tscn" id="1_557in"]
+[ext_resource type="PackedScene" uid="uid://b18t3ewd72p3o" path="res://enemy_manager.tscn" id="1_u08b2"]
 [ext_resource type="PackedScene" uid="uid://d3nujahlynrrl" path="res://Player/test_character.tscn" id="2_u08b2"]
-[ext_resource type="PackedScene" uid="uid://b3wncjh7x3j47" path="res://Enemy/enemy.tscn" id="3_km7mj"]
 
 [node name="AndrewTestScene" type="Node2D" unique_id=211426458]
 
-[node name="HelloWorld" parent="." unique_id=1549354517 instance=ExtResource("1_557in")]
+[node name="EnemyManager" parent="." unique_id=1456131449 instance=ExtResource("1_u08b2")]
+MaxEnemyCount = 1
 
 [node name="TestCharacter" parent="." unique_id=987941485 instance=ExtResource("2_u08b2")]
 Speed = 500.0
-
-[node name="Enemy" parent="." unique_id=1818569185 instance=ExtResource("3_km7mj")]
-position = Vector2(528, 343)
-Speed = 100.0
