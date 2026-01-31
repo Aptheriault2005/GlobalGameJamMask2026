@@ -1,0 +1,17 @@
+[remap]
+
+importer="font_data_bmfont"
+type="FontFile"
+uid="uid://bbogjk5lkt8nt"
+path="res://.godot/imported/MainFont.fnt-f6366585976718c1471b8dd9e807da4b.fontdata"
+
+[deps]
+
+source_file="res://Matthew/Fonts/MainFont.fnt"
+dest_files=["res://.godot/imported/MainFont.fnt-f6366585976718c1471b8dd9e807da4b.fontdata"]
+
+[params]
+
+fallbacks=[]
+compress=true
+scaling_mode=2
