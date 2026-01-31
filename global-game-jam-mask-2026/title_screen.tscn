@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://c6cb0xbfc8lwc"]
+
+[ext_resource type="Script" uid="uid://du5t6d8uo2bxe" path="res://StartButton.cs" id="1_ak2if"]
+[ext_resource type="Script" uid="uid://dheagwmtc8awr" path="res://SettingsButton.cs" id="2_ig5kc"]
+[ext_resource type="Script" uid="uid://lugcrtobc635" path="res://QuitButton.cs" id="3_ig5kc"]
+
+[node name="TitleScreen" type="CanvasLayer" unique_id=1609603487]
+
+[node name="Control" type="Control" parent="." unique_id=1654326532]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(50, 50)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control" unique_id=2118192441]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 100
+alignment = 1
+
+[node name="StartButton" type="Button" parent="Control/VBoxContainer" unique_id=107271750]
+layout_mode = 2
+theme_override_font_sizes/font_size = 58
+text = "Start"
+script = ExtResource("1_ak2if")
+
+[node name="SettingsButton" type="Button" parent="Control/VBoxContainer" unique_id=1285234148]
+layout_mode = 2
+theme_override_font_sizes/font_size = 58
+text = "Settings"
+script = ExtResource("2_ig5kc")
+
+[node name="QuitButton" type="Button" parent="Control/VBoxContainer" unique_id=679189582]
+layout_mode = 2
+theme_override_font_sizes/font_size = 58
+text = "Quit"
+script = ExtResource("3_ig5kc")
