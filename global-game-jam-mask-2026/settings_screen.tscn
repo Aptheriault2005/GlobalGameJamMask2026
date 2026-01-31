@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://lugcrtobc635" path="res://QuitButton.cs" id="1_00yke"]
 [ext_resource type="Script" uid="uid://bk2dbh0oy0w2a" path="res://ControlsButton.cs" id="1_b5707"]
 [ext_resource type="Script" uid="uid://b4hs06cckm0wq" path="res://BackButton.cs" id="2_pfwel"]
+[ext_resource type="Script" uid="uid://vdeb372djkq5" path="res://VolumeButton.cs" id="2_pl6fm"]
 
 [node name="SettingsScreen" type="CanvasLayer" unique_id=917333332]
 
@@ -32,6 +33,7 @@ text = "Resolution"
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
 text = "Volume"
+script = ExtResource("2_pl6fm")
 
 [node name="CenterContainer2" type="CenterContainer" parent="." unique_id=946507683]
 anchors_preset = 12

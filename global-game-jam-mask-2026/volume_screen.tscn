@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://bowsr4q6nx647"]
+
+[ext_resource type="Script" uid="uid://ejj35wtfxshm" path="res://MasterSlider.cs" id="1_v0457"]
+[ext_resource type="Script" uid="uid://dj6qveyoalboo" path="res://MusicSlider.cs" id="2_t6y05"]
+[ext_resource type="Script" uid="uid://3xkwtpuaol07" path="res://SfxSlider.cs" id="3_un8rp"]
+
+[node name="VolumeScreen" type="CanvasLayer" unique_id=737545509]
+
+[node name="MasterSlider" type="HSlider" parent="." unique_id=2066449296]
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 326.0
+offset_top = -58.0
+offset_right = -326.0
+offset_bottom = 42.0
+grow_horizontal = 2
+grow_vertical = 2
+max_value = 1.0
+step = 0.001
+script = ExtResource("1_v0457")
+metadata/_edit_use_anchors_ = true
+
+[node name="MusicSlider" type="HSlider" parent="." unique_id=507421859]
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 326.0
+offset_top = -58.0
+offset_right = -326.0
+offset_bottom = 42.0
+grow_horizontal = 2
+grow_vertical = 2
+max_value = 1.0
+step = 0.001
+script = ExtResource("2_t6y05")
+metadata/_edit_use_anchors_ = true
+
+[node name="SFXSlider" type="HSlider" parent="." unique_id=663050635]
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 326.0
+offset_top = -58.0
+offset_right = -326.0
+offset_bottom = 42.0
+grow_horizontal = 2
+grow_vertical = 2
+max_value = 1.0
+step = 0.001
+script = ExtResource("3_un8rp")
+metadata/_edit_use_anchors_ = true
+
+[node name="MasterAudioStream" type="AudioStreamPlayer2D" parent="." unique_id=1800036171]
+
+[node name="MusicAudioStream" type="AudioStreamPlayer2D" parent="." unique_id=458889505]
+bus = &"Music"
+
+[node name="SFXAudioStream" type="AudioStreamPlayer2D" parent="." unique_id=470220870]
+bus = &"Sound Effects"

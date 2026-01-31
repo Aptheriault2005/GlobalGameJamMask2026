@@ -10,7 +10,8 @@ public partial class ControlsButton : Button
 		// Brings player back to game if have started
 		
 		if (Globals.Instance.Started) {
-			Globals.Instance.PrevScene = "res://testing.tscn";
+			//Globals.Instance.PrevScene = "res://testing.tscn";
+			// Needs to change after merge
 		}
 		else {
 			Globals.Instance.PrevScene = "res://title_screen.tscn";
