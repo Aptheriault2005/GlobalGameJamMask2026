@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://cnd7swoerisex"]
+
+[ext_resource type="Script" uid="uid://dsv7mlwbmjj0" path="res://LevisCode/CharacterBody2d.cs" id="1_87ho7"]
+[ext_resource type="Texture2D" uid="uid://bjo1bpib07bbm" path="res://icon.svg" id="2_p4vec"]
+[ext_resource type="PackedScene" uid="uid://csq40tlrrhraw" path="res://LevisCode/player_bullet.tscn" id="2_qpehj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qpehj"]
+size = Vector2(64, 64)
+
+[node name="PlayerController" type="CharacterBody2D" unique_id=572176088]
+script = ExtResource("1_87ho7")
+bullet = ExtResource("2_qpehj")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=430540736]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_p4vec")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=600340323]
+shape = SubResource("RectangleShape2D_qpehj")
+
+[node name="Direction" type="Timer" parent="." unique_id=1638185909]
+process_callback = 0
+wait_time = 6.283
+autostart = true
+
+[node name="Cooldown" type="Timer" parent="." unique_id=1357036766]
+process_callback = 0
+wait_time = 0.05
+one_shot = true

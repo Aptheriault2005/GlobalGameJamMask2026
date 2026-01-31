@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://d4lfw6a3x4xp3"]
+
+[ext_resource type="PackedScene" uid="uid://cnd7swoerisex" path="res://LevisCode/player_controller.tscn" id="1_sx6i8"]
+
+[node name="Levis-Gym" type="Node2D" unique_id=1031575374]
+
+[node name="PlayerController" parent="." unique_id=572176088 instance=ExtResource("1_sx6i8")]
+position = Vector2(300, 300)
