@@ -8,7 +8,8 @@ public partial class SfxSlider : HSlider
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		 sfx = AudioServer.GetBusIndex("Sound Effects");
+		sfx = AudioServer.GetBusIndex("Sound Effects");
+		AudioServer.SetBusVolumeDb(sfx, Mathf.LinearToDb(1);
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.

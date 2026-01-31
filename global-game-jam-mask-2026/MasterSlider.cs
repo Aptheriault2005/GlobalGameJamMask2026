@@ -8,7 +8,8 @@ public partial class MasterSlider : HSlider
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		 master = AudioServer.GetBusIndex("Master");
+		master = AudioServer.GetBusIndex("Master");
+		AudioServer.SetBusVolumeDb(master, Mathf.LinearToDb(1);
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
