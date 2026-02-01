@@ -13,11 +13,11 @@ public partial class TestCharacter : CharacterBody2D
 		currentPlayer = this;
 	}
 
-    public override void _ExitTree()
-    {
-        healthComponent.HealthChanged -= OnHealthChanged;
+	public override void _ExitTree()
+	{
+		healthComponent.HealthChanged -= OnHealthChanged;
 		healthComponent.Death -= OnDeath;
-    }
+	}
 
 	public override void _Ready()
 	{
