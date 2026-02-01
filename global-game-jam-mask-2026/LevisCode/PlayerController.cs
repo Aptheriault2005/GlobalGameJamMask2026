@@ -5,6 +5,7 @@ public partial class PlayerController : CharacterBody2D
 {
 	public const float Speed = 300.0f;
 	public static Vector2 exportPosition = Vector2.Zero;
+	[Export] private HealthComponent healthComponent;
 	[Export] private GhostbusterSprayPattern gbsp;
 	[Export] private SpiralSprayPattern ssp;
 	[Export] private PulseSprayPattern psp;
@@ -26,7 +27,13 @@ public partial class PlayerController : CharacterBody2D
 	public override void _Ready()
 	{
 		playerSprite = GetNode<AnimatedSprite2D>("Sprite2D");
+		healthComponent.Death += OnDeath;
 	}
+
+    public override void _ExitTree()
+    {
+        healthComponent.Death -= OnDeath;
+    }
 
 	public override void _PhysicsProcess(double delta)
 	{
@@ -90,9 +97,14 @@ public partial class PlayerController : CharacterBody2D
 		sprayPattern = powerup;
 		Score.AddScore(100);
 	}
-	
+
 	public static Vector2 GetPlayerPosition()
 	{
 		return exportPosition;
+	}
+	
+	public void OnDeath()
+	{
+		// ADD CODE HERE FOR SCENE CHANGE
 	}
 }
