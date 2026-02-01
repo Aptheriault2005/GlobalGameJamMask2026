@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://ct7vynlkndnlj" path="res://LevisCode/SpiralSprayPattern.cs" id="5_ydxxq"]
 [ext_resource type="Texture2D" uid="uid://cjdd3caajlg6a" path="res://LevisArt/playerBack.png" id="6_57wcj"]
 [ext_resource type="Script" uid="uid://6bxs3hc2qs18" path="res://LevisCode/PulseSprayPattern.cs" id="6_rhlbj"]
+[ext_resource type="PackedScene" uid="uid://byt6pduwlenmf" path="res://Andrew/Scenes/Components/health_component.tscn" id="10_fo3bd"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_x0lkq"]
 animations = [{
@@ -103,3 +104,6 @@ wait_time = 0.2
 one_shot = true
 
 [node name="PlayerTag" type="Node" parent="." unique_id=1187244770]
+
+[node name="HealthComponent" parent="." unique_id=1188606346 instance=ExtResource("10_fo3bd")]
+MaxHealth = 100.0

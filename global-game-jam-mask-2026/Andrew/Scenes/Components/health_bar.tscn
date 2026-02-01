@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://kiis1cogcxbf"]
+
+[ext_resource type="Script" uid="uid://dky1f1t34g6cm" path="res://HealthBar.cs" id="1_m7ell"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m7ell"]
+bg_color = Color(0.23248088, 0.23248094, 0.2324808, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+expand_margin_left = 4.0
+expand_margin_top = 4.0
+expand_margin_right = 4.0
+expand_margin_bottom = 4.0
+
+[sub_resource type="Gradient" id="Gradient_33dbi"]
+colors = PackedColorArray(1, 0, 0, 1, 0.3254902, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ly1kf"]
+gradient = SubResource("Gradient_33dbi")
+fill_from = Vector2(1, 0)
+fill_to = Vector2(1, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xo0sy"]
+texture = SubResource("GradientTexture2D_ly1kf")
+
+[node name="HealthBar" type="PanelContainer" unique_id=1731711809 node_paths=PackedStringArray("healthBar", "healthLabel")]
+offset_right = 400.0
+offset_bottom = 30.0
+script = ExtResource("1_m7ell")
+healthBar = NodePath("ProgressBar")
+healthLabel = NodePath("Label")
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=1007624162]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_styles/background = SubResource("StyleBoxFlat_m7ell")
+theme_override_styles/fill = SubResource("StyleBoxTexture_xo0sy")
+max_value = 1.0
+value = 0.5
+show_percentage = false
+
+[node name="Label" type="Label" parent="." unique_id=1017848213]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 24
+text = "Health: xxx / xxx"
+horizontal_alignment = 1
+vertical_alignment = 3

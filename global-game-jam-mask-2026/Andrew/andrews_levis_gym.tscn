@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://codqjpcxewftc" path="res://LevisCode/Score.cs" id="6_i3w6b"]
 [ext_resource type="PackedScene" uid="uid://b00xfak8t2663" path="res://Andrew/Scenes/Enemies/enemy_manager.tscn" id="7_us12v"]
 [ext_resource type="PackedScene" uid="uid://bqp5umf1lmamp" path="res://Matthew/Scenes/pause_menu.tscn" id="8_bkka4"]
+[ext_resource type="PackedScene" uid="uid://kiis1cogcxbf" path="res://Andrew/Scenes/Components/health_bar.tscn" id="9_ico3s"]
 
 [sub_resource type="Theme" id="Theme_k11dx"]
 default_font = ExtResource("5_4wwgh")
@@ -34,8 +35,9 @@ texture = ExtResource("2_4g36q")
 [node name="PowerupSpawner" parent="." unique_id=1576011739 instance=ExtResource("3_pyyhd")]
 position = Vector2(500, 400)
 
-[node name="PlayerController" parent="." unique_id=572176088 instance=ExtResource("4_ocswt")]
+[node name="PlayerController" parent="." unique_id=572176088 node_paths=PackedStringArray("pm") instance=ExtResource("4_ocswt")]
 position = Vector2(500, 400)
+pm = NodePath("../PauseMenu")
 
 [node name="Control" type="Control" parent="." unique_id=1627813428]
 layout_mode = 3
@@ -57,7 +59,13 @@ vertical_alignment = 1
 script = ExtResource("6_i3w6b")
 
 [node name="EnemyManager" parent="." unique_id=1456131449 instance=ExtResource("7_us12v")]
-StartTimerWaitTime = 1.0
 
 [node name="PauseMenu" parent="." unique_id=662446836 instance=ExtResource("8_bkka4")]
 process_mode = 2
+
+[node name="HealthBar" parent="." unique_id=1731711809 node_paths=PackedStringArray("NodeToTrack") instance=ExtResource("9_ico3s")]
+offset_left = 50.0
+offset_top = 50.0
+offset_right = 450.0
+offset_bottom = 80.0
+NodeToTrack = NodePath("../PlayerController")
