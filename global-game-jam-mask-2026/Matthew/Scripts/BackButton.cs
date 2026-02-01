@@ -13,7 +13,8 @@ public partial class BackButton : Button
 	{
 	}
 	
-	public override void _Pressed() {
-		GetTree().ChangeSceneToFile(Globals.Instance.PrevScene);
+	public async override void _Pressed() {
+		var tr = GetNode<TransitionScreen>("/root/TransitionScreen");
+		await tr.Transition(Globals.Instance.PrevScene);
 	}
 }

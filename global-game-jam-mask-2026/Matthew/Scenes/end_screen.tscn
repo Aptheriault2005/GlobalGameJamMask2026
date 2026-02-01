@@ -1,7 +1,10 @@
 [gd_scene format=3 uid="uid://bhgq438e6t26j"]
 
+[ext_resource type="Script" uid="uid://b0pq1mgayy5tr" path="res://Matthew/Scripts/EndBaseScore.cs" id="1_640rh"]
 [ext_resource type="Script" uid="uid://cflsy7wrhymcs" path="res://Matthew/Scripts/TitleScreen.cs" id="1_la3vb"]
+[ext_resource type="Script" uid="uid://dewywf3g5beeb" path="res://Matthew/Scripts/TimeScore.cs" id="2_5qli2"]
 [ext_resource type="Script" uid="uid://lugcrtobc635" path="res://Matthew/Scripts/QuitButton.cs" id="2_640rh"]
+[ext_resource type="Script" uid="uid://uywj3schuwxv" path="res://Matthew/Scripts/TotalScore.cs" id="3_8t88u"]
 
 [node name="EndScreen" type="CanvasLayer" unique_id=1451227434]
 
@@ -14,10 +17,28 @@ grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer" unique_id=929176718]
 layout_mode = 2
+theme_override_constants/separation = 150
 
-[node name="RichTextLabel" type="RichTextLabel" parent="CenterContainer/VBoxContainer" unique_id=1951687761]
+[node name="Score" type="Label" parent="CenterContainer/VBoxContainer" unique_id=171891355]
 layout_mode = 2
+theme_override_font_sizes/font_size = 40
 text = "Score: "
+horizontal_alignment = 1
+script = ExtResource("1_640rh")
+
+[node name="TimeScore" type="Label" parent="CenterContainer/VBoxContainer" unique_id=1380495253]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Time: "
+horizontal_alignment = 1
+script = ExtResource("2_5qli2")
+
+[node name="TotalScore" type="Label" parent="CenterContainer/VBoxContainer" unique_id=1540723893]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Total Score: "
+horizontal_alignment = 1
+script = ExtResource("3_8t88u")
 
 [node name="TitleScreen" type="Button" parent="CenterContainer/VBoxContainer" unique_id=1604972536]
 layout_mode = 2
