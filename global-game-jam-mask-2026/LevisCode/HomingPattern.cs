@@ -5,6 +5,7 @@ public partial class HomingPattern : Node
 {
 	private Timer cooldown;
 	private Node2D pc;
+	public bool active = true;
 	
 	public override void _Ready()
 	{
@@ -14,6 +15,7 @@ public partial class HomingPattern : Node
 	
 	public override void _PhysicsProcess(double delta)
 	{
+		if (!active) return;
 		if (cooldown.TimeLeft != 0) return;
 		Node2D b = ResourceLoader.Load<PackedScene>("res://LevisCode/enemy_bullet.tscn").Instantiate<Node2D>();
 		AddChild(b);

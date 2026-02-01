@@ -18,9 +18,12 @@ metadata/enemy = false
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1044937737]
 texture = ExtResource("2_05q40")
 
-[node name="HealthComponent" parent="." unique_id=1188606346 node_paths=PackedStringArray("modulateSprite") instance=ExtResource("2_uigks")]
+[node name="HealthComponent" parent="." unique_id=1188606346 node_paths=PackedStringArray("modulateSprite", "hurtbox", "bulletPattern", "hp") instance=ExtResource("2_uigks")]
 MaxHealth = 10.0
 modulateSprite = NodePath("../Sprite2D")
+hurtbox = NodePath("../HurtBox")
+bulletPattern = NodePath("../HomingPattern")
+hp = NodePath("../HomingPattern")
 
 [node name="OrbitMovementComponent" parent="." unique_id=683472997 node_paths=PackedStringArray("Enemy") instance=ExtResource("3_05q40")]
 Enemy = NodePath("..")

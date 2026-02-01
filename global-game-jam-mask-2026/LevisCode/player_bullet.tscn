@@ -8,7 +8,6 @@
 script = ExtResource("1_mbjb4")
 
 [node name="HitBox" parent="." unique_id=897380389 instance=ExtResource("2_lw288")]
-Damage = 1.0
 TargetMetadata = &"enemy"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1337573876]
