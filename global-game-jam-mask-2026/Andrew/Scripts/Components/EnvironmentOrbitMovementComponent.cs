@@ -4,7 +4,7 @@ using System;
 public partial class EnvironmentOrbitMovementComponent : Node
 {
     [Export] public BaseEnemy Enemy { get; private set; }
-    [Export] public Node2D OrbitSlotNode { get; private set; }
+    [Export] public OrbitPoint OrbitSlotNode { get; private set; }
     [Export] public Timer MoveInTimer { get; private set; }
 
     private bool Orbiting = false;
@@ -13,6 +13,11 @@ public partial class EnvironmentOrbitMovementComponent : Node
     {
         OrbitPoint orbitNode = EnemyManager.enemyManager.FindValidEnvironmentOrbitPoint();
         SetOrbitSlotNode(orbitNode);
+    }
+
+    public override void _ExitTree()
+    {
+        OrbitSlotNode.SetEnemyAtPoint(null);
     }
 
     public override void _Process(double delta)
