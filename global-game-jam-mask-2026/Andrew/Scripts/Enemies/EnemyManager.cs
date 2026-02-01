@@ -10,6 +10,7 @@ public partial class EnemyManager : Node
     [Export] public Node2D PlayerOrbitsContainer { get; private set; }
     [Export] public Node2D EnvironmentOrbitsContainer { get; private set; }
     [Export] public Node EnemyContainer { get; private set; }
+	[Export] public Node EnemyBulletContainer { get; private set; }
 
     [ExportCategory("Enemy Scenes")]
     [Export] private PackedScene PlayerOrbitEnemyScene;
@@ -46,7 +47,9 @@ public partial class EnemyManager : Node
         SpawnTimer.Start(StartTimerWaitTime);
 
         NextTimerWaitTime = StartTimerWaitTime;
-        MaxEnemyIncrementThreshold = MaxEnemyIncrementThresholdRate;
+		MaxEnemyIncrementThreshold = MaxEnemyIncrementThresholdRate;
+		
+		//SpawnEnemies();
     }
 
     public override void _PhysicsProcess(double delta)

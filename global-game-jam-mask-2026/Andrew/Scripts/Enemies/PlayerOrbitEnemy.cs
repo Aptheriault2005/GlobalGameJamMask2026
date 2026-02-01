@@ -3,19 +3,6 @@ using System;
 
 public partial class PlayerOrbitEnemy : BaseEnemy
 {
-	[Export] public HealthComponent healthComponent { get; private set; }
+	//[Export] public HealthComponent healthComponent { get; private set; }
 	[Export] public PlayerOrbitMovementComponent playerOrbitMovementComponent { get; private set; }
-
-	public override void _Ready()
-	{
-		healthComponent.Death += OnDeath;
-		healthComponent.HealthChanged += OnHealthChanged;
-	}
-
-	public override void _ExitTree()
-	{
-		healthComponent.Death -= OnDeath;
-		healthComponent.HealthChanged -= OnHealthChanged;
-	}
-
 }

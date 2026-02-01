@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://biofvp5bmr325"]
+[gd_scene format=3 uid="uid://dau5iq1msja7b"]
 
-[ext_resource type="Script" uid="uid://csagtwtlyjm44" path="res://LevisCode/EnemyBullet.cs" id="1_5ukxr"]
+[ext_resource type="Script" path="res://LevisCode/EnemyBullet.cs" id="1_5ukxr"]
 [ext_resource type="PackedScene" uid="uid://dsev7c0mboqx3" path="res://Andrew/Scenes/Components/hit_box.tscn" id="2_s7wf4"]
 [ext_resource type="Texture2D" uid="uid://ckt6rq2ypnlmc" path="res://LevisArt/bullet.png" id="3_fve6u"]
 
@@ -10,7 +10,7 @@ speed = 200.0
 
 [node name="HitBox" parent="." unique_id=897380389 instance=ExtResource("2_s7wf4")]
 Radius = 20.0
-TargetMetadata = &"player_controller"
+TargetMetadata = &"player"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1337573876]
 scale = Vector2(0.25, 0.25)

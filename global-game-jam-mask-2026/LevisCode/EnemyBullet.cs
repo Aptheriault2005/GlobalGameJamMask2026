@@ -4,6 +4,7 @@ using System;
 public partial class EnemyBullet : Node2D
 {
 	[Export] public float speed = 500.0f;
+	[Export] private HitBox hitBox;
 	
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -16,7 +17,7 @@ public partial class EnemyBullet : Node2D
 	{
 		MoveLocalX(speed * (float)delta);
 	}
-	
+
 	public void timeout()
 	{
 		QueueFree();

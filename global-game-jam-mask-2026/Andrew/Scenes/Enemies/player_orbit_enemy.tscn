@@ -7,10 +7,15 @@
 [ext_resource type="PackedScene" uid="uid://8crl4hlg5d8t" path="res://Andrew/Scenes/Components/player_orbit_movement_component.tscn" id="3_05q40"]
 [ext_resource type="PackedScene" uid="uid://d4itax1j1mdo3" path="res://Andrew/Scenes/Components/hurt_box.tscn" id="5_4ajur"]
 
-[node name="PlayerOrbitEnemy" type="Node2D" unique_id=871318963 node_paths=PackedStringArray("healthComponent", "playerOrbitMovementComponent")]
+[node name="PlayerOrbitEnemy" type="Node2D" unique_id=871318963 node_paths=PackedStringArray("playerOrbitMovementComponent", "healthComponent", "modulateSprite", "hurtbox", "bulletPattern", "HitAnimTimer", "DeathAnimTimer")]
 script = ExtResource("1_05q40")
-healthComponent = NodePath("HealthComponent")
 playerOrbitMovementComponent = NodePath("OrbitMovementComponent")
+healthComponent = NodePath("HealthComponent")
+modulateSprite = NodePath("Sprite2D")
+hurtbox = NodePath("HurtBox")
+bulletPattern = NodePath("HomingPattern")
+HitAnimTimer = NodePath("HitAnimTimer")
+DeathAnimTimer = NodePath("DeathAnimTimer")
 metadata/enemy = false
 
 [node name="HomingPattern" parent="." unique_id=647468502 instance=ExtResource("2_wc3ox")]
@@ -18,14 +23,20 @@ metadata/enemy = false
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1044937737]
 texture = ExtResource("2_05q40")
 
-[node name="HealthComponent" parent="." unique_id=1188606346 node_paths=PackedStringArray("modulateSprite", "hurtbox", "bulletPattern", "hp") instance=ExtResource("2_uigks")]
-MaxHealth = 10.0
-modulateSprite = NodePath("../Sprite2D")
-hurtbox = NodePath("../HurtBox")
-bulletPattern = NodePath("../HomingPattern")
-hp = NodePath("../HomingPattern")
+[node name="HealthComponent" parent="." unique_id=1188606346 instance=ExtResource("2_uigks")]
+MaxHealth = 30.0
 
 [node name="OrbitMovementComponent" parent="." unique_id=683472997 node_paths=PackedStringArray("Enemy") instance=ExtResource("3_05q40")]
 Enemy = NodePath("..")
 
 [node name="HurtBox" parent="." unique_id=514602679 instance=ExtResource("5_4ajur")]
+
+[node name="HitAnimTimer" type="Timer" parent="." unique_id=1031385506]
+wait_time = 0.25
+one_shot = true
+
+[node name="DeathAnimTimer" type="Timer" parent="." unique_id=1926292488]
+one_shot = true
+
+[connection signal="timeout" from="HitAnimTimer" to="." method="OnHitAnimTimerTimeout"]
+[connection signal="timeout" from="DeathAnimTimer" to="." method="OnDeathTimerTimeout"]

@@ -61,6 +61,13 @@ public partial class HitBox : Area2D
 			return;
 		}
 
+		// HurtBox hurtBox = area as HurtBox;
+
+		// if (!hurtBox.canBeHit)
+		// {
+		// 	return;
+		// }
+
 		// GD.Print(area.GetParent().Name, " hit");
 		HealthComponent healthComponent = null;
 
@@ -78,6 +85,7 @@ public partial class HitBox : Area2D
 		if (healthComponent != null)
 		{
 			healthComponent.Damage(Damage);
+			GetParent().QueueFree();
 		}
 	}
 

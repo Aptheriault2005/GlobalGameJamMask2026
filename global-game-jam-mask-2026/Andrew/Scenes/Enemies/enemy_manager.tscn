@@ -5,12 +5,13 @@
 [ext_resource type="PackedScene" uid="uid://dcmaa2ngxalr7" path="res://Andrew/Scenes/Enemies/environment_orbit_enemy.tscn" id="3_1eqb4"]
 [ext_resource type="PackedScene" uid="uid://dj4vcwfgsebg7" path="res://Andrew/Scenes/Orbit/orbit_point_generator.tscn" id="3_kdjgt"]
 
-[node name="EnemyManager" type="Node" unique_id=1456131449 node_paths=PackedStringArray("SpawnTimer", "PlayerOrbitsContainer", "EnvironmentOrbitsContainer", "EnemyContainer")]
+[node name="EnemyManager" type="Node" unique_id=1456131449 node_paths=PackedStringArray("SpawnTimer", "PlayerOrbitsContainer", "EnvironmentOrbitsContainer", "EnemyContainer", "EnemyBulletContainer")]
 script = ExtResource("1_jcgge")
 SpawnTimer = NodePath("SpawnTimer")
 PlayerOrbitsContainer = NodePath("PlayerOrbits")
 EnvironmentOrbitsContainer = NodePath("EnvironmentOrbits")
 EnemyContainer = NodePath("EnemyContainer")
+EnemyBulletContainer = NodePath("EnemyBulletContainer")
 PlayerOrbitEnemyScene = ExtResource("2_thm0t")
 EnvironmentOrbitEnemyScene = ExtResource("3_1eqb4")
 
@@ -18,6 +19,8 @@ EnvironmentOrbitEnemyScene = ExtResource("3_1eqb4")
 wait_time = 0.1
 
 [node name="EnemyContainer" type="Node" parent="." unique_id=832648660]
+
+[node name="EnemyBulletContainer" type="Node" parent="." unique_id=1559776441]
 
 [node name="PlayerOrbits" type="Node2D" parent="." unique_id=1734932578]
 

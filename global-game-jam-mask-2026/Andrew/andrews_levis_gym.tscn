@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://bqxi1qynoowjj"]
+[gd_scene format=3 uid="uid://ykxjpw40q1yk"]
 
 [ext_resource type="Texture2D" uid="uid://cghau1lgfnuuh" path="res://LevisArt/bg-tile-low.png" id="1_7auie"]
 [ext_resource type="Texture2D" uid="uid://cnnr65rsw83at" path="res://LevisArt/bg-tile-hi.png" id="2_4g36q"]
@@ -8,7 +8,7 @@
 [ext_resource type="Script" uid="uid://codqjpcxewftc" path="res://LevisCode/Score.cs" id="6_i3w6b"]
 [ext_resource type="PackedScene" uid="uid://b00xfak8t2663" path="res://Andrew/Scenes/Enemies/enemy_manager.tscn" id="7_us12v"]
 [ext_resource type="PackedScene" uid="uid://bqp5umf1lmamp" path="res://Matthew/Scenes/pause_menu.tscn" id="8_bkka4"]
-[ext_resource type="PackedScene" uid="uid://kiis1cogcxbf" path="res://Andrew/Scenes/Components/health_bar.tscn" id="9_ico3s"]
+[ext_resource type="PackedScene" path="res://Andrew/Scenes/Components/health_bar.tscn" id="9_ico3s"]
 
 [sub_resource type="Theme" id="Theme_k11dx"]
 default_font = ExtResource("5_4wwgh")
@@ -59,6 +59,8 @@ vertical_alignment = 1
 script = ExtResource("6_i3w6b")
 
 [node name="EnemyManager" parent="." unique_id=1456131449 instance=ExtResource("7_us12v")]
+MaxEnemyCount = 1
+StartTimerWaitTime = 1.0
 
 [node name="PauseMenu" parent="." unique_id=662446836 instance=ExtResource("8_bkka4")]
 process_mode = 2

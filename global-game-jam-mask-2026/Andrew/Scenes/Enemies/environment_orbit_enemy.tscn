@@ -2,24 +2,41 @@
 
 [ext_resource type="Script" uid="uid://dlrleu6u1qpl4" path="res://EnvironmentOrbitEnemy.cs" id="1_t80bc"]
 [ext_resource type="Texture2D" uid="uid://6odd8ux8aaut" path="res://LevisArt/mask.png" id="2_7ggpx"]
+[ext_resource type="PackedScene" uid="uid://iprlb7ce3uvv" path="res://LevisCode/homing_pattern.tscn" id="2_gunh5"]
 [ext_resource type="PackedScene" uid="uid://byt6pduwlenmf" path="res://Andrew/Scenes/Components/health_component.tscn" id="3_44yoq"]
 [ext_resource type="PackedScene" uid="uid://gkgfmjd1qvf1" path="res://Andrew/Scenes/Components/environment_orbit_movement_component.tscn" id="4_7ggpx"]
 [ext_resource type="PackedScene" uid="uid://d4itax1j1mdo3" path="res://Andrew/Scenes/Components/hurt_box.tscn" id="5_44yoq"]
 
-[node name="EnvironmentOrbitEnemy" type="Node2D" unique_id=1928733065 node_paths=PackedStringArray("healthComponent", "environmentOrbitMovementComponent")]
+[node name="EnvironmentOrbitEnemy" type="Node2D" unique_id=1928733065 node_paths=PackedStringArray("environmentOrbitMovementComponent", "healthComponent", "modulateSprite", "hurtbox", "bulletPattern", "HitAnimTimer", "DeathAnimTimer")]
 script = ExtResource("1_t80bc")
-healthComponent = NodePath("HealthComponent")
 environmentOrbitMovementComponent = NodePath("EnvironmentOrbitMovementComponent")
+healthComponent = NodePath("HealthComponent")
+modulateSprite = NodePath("Sprite2D")
+hurtbox = NodePath("HurtBox")
+bulletPattern = NodePath("HomingPattern")
+HitAnimTimer = NodePath("HitAnimTimer")
+DeathAnimTimer = NodePath("DeathAnimTimer")
 metadata/enemy = false
 
+[node name="HomingPattern" parent="." unique_id=647468502 instance=ExtResource("2_gunh5")]
+
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=305025125]
-modulate = Color(1, 0, 0, 1)
 texture = ExtResource("2_7ggpx")
 
 [node name="HealthComponent" parent="." unique_id=1188606346 instance=ExtResource("3_44yoq")]
-MaxHealth = 100.0
+MaxHealth = 30.0
 
 [node name="EnvironmentOrbitMovementComponent" parent="." unique_id=1826922020 node_paths=PackedStringArray("Enemy") instance=ExtResource("4_7ggpx")]
 Enemy = NodePath("..")
 
 [node name="HurtBox" parent="." unique_id=514602679 instance=ExtResource("5_44yoq")]
+
+[node name="HitAnimTimer" type="Timer" parent="." unique_id=1916537329]
+wait_time = 0.25
+one_shot = true
+
+[node name="DeathAnimTimer" type="Timer" parent="." unique_id=343351324]
+one_shot = true
+
+[connection signal="timeout" from="HitAnimTimer" to="." method="OnHitAnimTimerTimeout"]
+[connection signal="timeout" from="DeathAnimTimer" to="." method="OnDeathTimerTimeout"]
