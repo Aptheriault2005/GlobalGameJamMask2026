@@ -7,7 +7,6 @@ public partial class HealthComponent : Node
     public float CurrentHealth { get; private set; }
 
     public Action<float> HealthChanged;
-
     public Action Death;
 
     public override void _Ready()

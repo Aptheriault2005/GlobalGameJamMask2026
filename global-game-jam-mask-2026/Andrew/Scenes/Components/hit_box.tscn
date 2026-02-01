@@ -11,4 +11,4 @@ collisionShape2D = NodePath("CollisionShape2D")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=114488617]
 shape = SubResource("CircleShape2D_hmo53")
 
-[connection signal="body_entered" from="." to="." method="OnBodyEntered"]
+[connection signal="area_entered" from="." to="." method="OnAreaEntered"]

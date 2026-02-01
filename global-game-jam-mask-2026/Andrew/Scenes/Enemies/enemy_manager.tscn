@@ -11,6 +11,7 @@ SpawnTimer = NodePath("SpawnTimer")
 PlayerOrbitsContainer = NodePath("PlayerOrbits")
 EnvironmentOrbitsContainer = NodePath("EnvironmentOrbits")
 EnemyContainer = NodePath("EnemyContainer")
+MaxEnemyCount = 1000
 PlayerOrbitEnemyScene = ExtResource("2_thm0t")
 EnvironmentOrbitEnemyScene = ExtResource("3_1eqb4")
 
@@ -34,13 +35,23 @@ OrbitPointDistance = 300.0
 
 [node name="OrbitPointGenerator3" parent="PlayerOrbits" unique_id=1751977099 instance=ExtResource("3_kdjgt")]
 OrbitSpeed = 0.75
-OrbitPointCount = 16
+OrbitPointCount = 11
 OrbitPointDistance = 400.0
 
 [node name="OrbitPointGenerator4" parent="PlayerOrbits" unique_id=808899643 instance=ExtResource("3_kdjgt")]
 OrbitSpeed = -0.5
-OrbitPointCount = 16
+OrbitPointCount = 17
 OrbitPointDistance = 500.0
+
+[node name="OrbitPointGenerator5" parent="PlayerOrbits" unique_id=1949770449 instance=ExtResource("3_kdjgt")]
+OrbitSpeed = 0.3
+OrbitPointCount = 25
+OrbitPointDistance = 600.0
+
+[node name="OrbitPointGenerator6" parent="PlayerOrbits" unique_id=1094574009 instance=ExtResource("3_kdjgt")]
+OrbitSpeed = -0.3
+OrbitPointCount = 31
+OrbitPointDistance = 700.0
 
 [node name="EnvironmentOrbits" type="Node2D" parent="." unique_id=1727916854]
 
@@ -72,15 +83,27 @@ OrbitPointCount = 11
 OrbitPointDistance = 400.0
 
 [node name="OrbitPointGenerator6" parent="EnvironmentOrbits" unique_id=456344109 instance=ExtResource("3_kdjgt")]
-position = Vector2(960, 810)
-OrbitSpeed = -1.0
-OrbitPointCount = 3
+position = Vector2(1160, 810)
+OrbitSpeed = -2.0
+OrbitPointCount = 5
 OrbitPointDistance = 200.0
 
 [node name="OrbitPointGenerator7" parent="EnvironmentOrbits" unique_id=882190970 instance=ExtResource("3_kdjgt")]
-position = Vector2(960, 270)
-OrbitSpeed = -1.0
+position = Vector2(760, 270)
+OrbitSpeed = 2.0
+OrbitPointCount = 5
+OrbitPointDistance = 200.0
+
+[node name="OrbitPointGenerator8" parent="EnvironmentOrbits" unique_id=1749444968 instance=ExtResource("3_kdjgt")]
+position = Vector2(760, 810)
+OrbitSpeed = 2.0
 OrbitPointCount = 3
+OrbitPointDistance = 200.0
+
+[node name="OrbitPointGenerator9" parent="EnvironmentOrbits" unique_id=2143464749 instance=ExtResource("3_kdjgt")]
+position = Vector2(1160, 270)
+OrbitSpeed = -2.0
+OrbitPointCount = 5
 OrbitPointDistance = 200.0
 
 [connection signal="timeout" from="SpawnTimer" to="." method="OnTimerTimeout"]

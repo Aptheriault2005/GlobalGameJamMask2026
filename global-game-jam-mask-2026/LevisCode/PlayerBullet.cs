@@ -1,9 +1,9 @@
 using Godot;
 using System;
 
-public partial class PlayerBullet : Area2D
+public partial class PlayerBullet : Node2D
 {
-	public float speed = 500.0f;
+	[Export] public float speed = 500.0f;
 	
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
