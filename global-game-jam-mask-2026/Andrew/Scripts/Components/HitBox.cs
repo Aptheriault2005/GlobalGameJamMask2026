@@ -54,14 +54,14 @@ public partial class HitBox : Area2D
 
 	public void OnAreaEntered(Area2D area)
 	{
-		GD.Print(area.GetParent().Name, " found");
+		// GD.Print(area.GetParent().Name, " found");
 
 		if (!area.GetParent().HasMeta(TargetMetadata))
 		{
 			return;
 		}
 
-		GD.Print(area.GetParent().Name, " hit");
+		// GD.Print(area.GetParent().Name, " hit");
 		HealthComponent healthComponent = null;
 
 		if (area.GetParent().GetChildren != null)

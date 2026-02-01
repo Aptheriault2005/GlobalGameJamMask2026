@@ -57,6 +57,7 @@ vertical_alignment = 1
 script = ExtResource("5_hew2x")
 
 [node name="EnemyManager" parent="." unique_id=1456131449 instance=ExtResource("7_k11dx")]
+MaxEnemyCount = 1
 
 [node name="PauseMenu" parent="." unique_id=662446836 instance=ExtResource("8_70ewo")]
 process_mode = 2

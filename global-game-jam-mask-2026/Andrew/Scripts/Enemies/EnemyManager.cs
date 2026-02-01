@@ -10,7 +10,7 @@ public partial class EnemyManager : Node
     [Export] public Node2D PlayerOrbitsContainer { get; private set; }
     [Export] public Node2D EnvironmentOrbitsContainer { get; private set; }
     [Export] private Node EnemyContainer;
-    [Export] private int MaxEnemyCount = 100;
+    [Export] private int MaxEnemyCount = 5;
     [Export] private PackedScene PlayerOrbitEnemyScene;
     [Export] private PackedScene EnvironmentOrbitEnemyScene;
     [Export] private Array<BaseEnemy> Enemies = [];
@@ -121,11 +121,16 @@ public partial class EnemyManager : Node
         if (Enemies.Count < MaxEnemyCount)
         {
             //GD.Print(Enemies.Count);
-            SpawnPlayers();
+            SpawnEnemies();
         }
     }
 
-    private void SpawnPlayers()
+    public void RemoveEnemy(BaseEnemy enemy)
+    {
+        Enemies.Remove(enemy);
+    }
+
+    private void SpawnEnemies()
     {
         if (HasValidPlayerOrbitPoints())
             {
