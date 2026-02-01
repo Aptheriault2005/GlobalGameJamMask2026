@@ -15,8 +15,11 @@ public partial class StartButton : Button
 	}
 	
 	public async override void _Pressed() {
+		TimerLabel.Elapsed = 0.0;
+		SoundScene.sfxButton.Play();
+		
 		var tr = GetNode<TransitionScreen>("/root/TransitionScreen");
-		await tr.Transition("res://LevisCode/levis_gym.tscn");
+		await tr.Transition("res://Andrew/andrews_levis_gym.tscn");
 		Globals.Instance.Started = true;
 	}
 }

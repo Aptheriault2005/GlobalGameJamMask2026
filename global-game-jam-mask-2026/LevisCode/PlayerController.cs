@@ -30,10 +30,10 @@ public partial class PlayerController : CharacterBody2D
 		healthComponent.Death += OnDeath;
 	}
 
-    public override void _ExitTree()
-    {
-        healthComponent.Death -= OnDeath;
-    }
+	public override void _ExitTree()
+	{
+		healthComponent.Death -= OnDeath;
+	}
 
 	public override void _PhysicsProcess(double delta)
 	{
@@ -105,6 +105,8 @@ public partial class PlayerController : CharacterBody2D
 	
 	public void OnDeath()
 	{
-		// ADD CODE HERE FOR SCENE CHANGE
+		Globals.Instance.Score = int.Parse(Score.SLabel.GetText());
+		Globals.Instance.ElapsedTime = TimerLabel.Elapsed;
+		GetTree().ChangeSceneToFile("res://Matthew/Scenes/end_screen.tscn");
 	}
 }

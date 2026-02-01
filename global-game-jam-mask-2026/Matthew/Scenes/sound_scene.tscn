@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://00lss3fbvcy2" path="res://Matthew/Scripts/SoundScene.cs" id="1_2x1yi"]
 [ext_resource type="AudioStream" uid="uid://drdqwvile0agx" path="res://Matthew/Sounds/Music/bgm_boss_loop.wav" id="2_31kfb"]
+[ext_resource type="AudioStream" uid="uid://ykbgu8tdi2bn" path="res://Matthew/Sounds/SFX/ui_click.wav" id="3_e1gbr"]
 
 [node name="SoundScene" type="Node" unique_id=216637123]
 script = ExtResource("1_2x1yi")
@@ -16,5 +17,6 @@ stream = ExtResource("2_31kfb")
 autoplay = true
 bus = &"Music"
 
-[node name="SFXStream" type="AudioStreamPlayer" parent="." unique_id=534646442]
+[node name="SFXStreamButton" type="AudioStreamPlayer" parent="." unique_id=534646442]
+stream = ExtResource("3_e1gbr")
 bus = &"Sound Effects"
