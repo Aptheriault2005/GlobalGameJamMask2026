@@ -5,17 +5,35 @@ using System.Linq;
 
 public partial class EnemyManager : Node
 {
-    private PlayerController player;
+    [ExportCategory("References")]
     [Export] public Timer SpawnTimer { get; private set; }
     [Export] public Node2D PlayerOrbitsContainer { get; private set; }
     [Export] public Node2D EnvironmentOrbitsContainer { get; private set; }
-    [Export] private Node EnemyContainer;
-    [Export] private int MaxEnemyCount = 5;
+    [Export] public Node EnemyContainer { get; private set; }
+
+    [ExportCategory("Enemy Scenes")]
     [Export] private PackedScene PlayerOrbitEnemyScene;
     [Export] private PackedScene EnvironmentOrbitEnemyScene;
-    [Export] private Array<BaseEnemy> Enemies = [];
+
+    [ExportCategory("Enemy Spawning")]
+    [Export] private int MaxEnemyCount = 5;
+    [Export] private float StartTimerWaitTime = 5.0f;
+    [Export] private float MinTimerWaitTime = 0.1f;
+    [Export] private float NextWaitTimeDecrement = 0.1f;
+    [Export] private int MaxEnemyIncrementThresholdRate = 100;
+    private int MaxEnemyIncrementThreshold;
+    private float NextTimerWaitTime = 5.0f;
+
+    public enum EnemyType
+    {
+        PlayerOrbitEnemy,
+        EnvironmentOrbitEnemy
+    }
 
     public static EnemyManager enemyManager;
+
+    private Array<BaseEnemy> Enemies = [];
+    private PlayerController player;
 
     public override void _EnterTree()
     {
@@ -25,11 +43,21 @@ public partial class EnemyManager : Node
     public override void _Ready()
     {
         player = PlayerController.Player;
+        SpawnTimer.Start(StartTimerWaitTime);
+
+        NextTimerWaitTime = StartTimerWaitTime;
+        MaxEnemyIncrementThreshold = MaxEnemyIncrementThresholdRate;
     }
 
     public override void _PhysicsProcess(double delta)
     {
         PlayerOrbitsContainer.Position = player.Position;
+
+        if (Score.SLabel.GetScore() >= MaxEnemyIncrementThreshold)
+        {
+            MaxEnemyCount += 1;
+            MaxEnemyIncrementThreshold += MaxEnemyIncrementThresholdRate;
+        }
     }
 
     public bool HasValidPlayerOrbitPoints()
@@ -120,9 +148,10 @@ public partial class EnemyManager : Node
     {
         if (Enemies.Count < MaxEnemyCount)
         {
-            //GD.Print(Enemies.Count);
+            NextTimerWaitTime = float.Clamp(NextTimerWaitTime - NextWaitTimeDecrement, MinTimerWaitTime, float.MaxValue);
             SpawnEnemies();
         }
+        SpawnTimer.Start(NextTimerWaitTime);
     }
 
     public void RemoveEnemy(BaseEnemy enemy)
@@ -132,14 +161,57 @@ public partial class EnemyManager : Node
 
     private void SpawnEnemies()
     {
-        if (HasValidPlayerOrbitPoints())
+        EnemyType[] allPossibleEnemyTypes = Enum.GetValues<EnemyType>();
+        Array<EnemyType> validEnemyTypes = [];
+
+        foreach (EnemyType enemyType in allPossibleEnemyTypes)
+        {
+            if (EnemyCanBeSpawned(enemyType))
             {
-                SpawnPlayerOrbitEnemy();
+                validEnemyTypes.Add(enemyType);
             }
-            else if (HasValidEnvironmentOrbitPoints())
-            {
-                SpawnEnvironmentOrbitEnemy();
-            }
+        }
+
+        if (validEnemyTypes.Count == 0)
+        {
+            return;
+        }
+
+        EnemyType enemyToSpawn = validEnemyTypes.PickRandom();
+
+        SpawnEnemy(enemyToSpawn);
+    }
+
+    private bool EnemyCanBeSpawned(EnemyType enemyType)
+    {
+        switch (enemyType)
+        {
+            case EnemyType.PlayerOrbitEnemy:
+                return HasValidPlayerOrbitPoints();
+            case EnemyType.EnvironmentOrbitEnemy:
+                return HasValidEnvironmentOrbitPoints();
+        }
+
+        return false;
+    }
+
+    private void SpawnEnemy(EnemyType enemyType)
+    {
+        switch (enemyType)
+        {
+            case EnemyType.PlayerOrbitEnemy:
+                if (HasValidPlayerOrbitPoints())
+                {
+                    SpawnPlayerOrbitEnemy();
+                }
+                break;
+            case EnemyType.EnvironmentOrbitEnemy:
+                if (HasValidEnvironmentOrbitPoints())
+                {
+                    SpawnEnvironmentOrbitEnemy();
+                }
+                break;
+        }
     }
 
     private void SpawnPlayerOrbitEnemy()

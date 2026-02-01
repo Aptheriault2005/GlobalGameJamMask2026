@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://bqxi1qynoowjj"]
+
+[ext_resource type="Texture2D" uid="uid://cghau1lgfnuuh" path="res://LevisArt/bg-tile-low.png" id="1_7auie"]
+[ext_resource type="Texture2D" uid="uid://cnnr65rsw83at" path="res://LevisArt/bg-tile-hi.png" id="2_4g36q"]
+[ext_resource type="PackedScene" uid="uid://c4ry0e4el635h" path="res://LevisCode/powerup_spawner.tscn" id="3_pyyhd"]
+[ext_resource type="PackedScene" uid="uid://cnd7swoerisex" path="res://LevisCode/player_controller.tscn" id="4_ocswt"]
+[ext_resource type="FontFile" uid="uid://bbogjk5lkt8nt" path="res://Matthew/Fonts/MainFont.fnt" id="5_4wwgh"]
+[ext_resource type="Script" uid="uid://codqjpcxewftc" path="res://LevisCode/Score.cs" id="6_i3w6b"]
+[ext_resource type="PackedScene" uid="uid://b00xfak8t2663" path="res://Andrew/Scenes/Enemies/enemy_manager.tscn" id="7_us12v"]
+[ext_resource type="PackedScene" uid="uid://bqp5umf1lmamp" path="res://Matthew/Scenes/pause_menu.tscn" id="8_bkka4"]
+
+[sub_resource type="Theme" id="Theme_k11dx"]
+default_font = ExtResource("5_4wwgh")
+default_font_size = 72
+
+[node name="Andrews-Levis-Gym" type="Node2D" unique_id=1031575374]
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=1871080097]
+repeat_size = Vector2(512, 512)
+autoscroll = Vector2(0, 30)
+repeat_times = 7
+
+[node name="Background1" type="Sprite2D" parent="Parallax2D" unique_id=1298328478]
+texture = ExtResource("1_7auie")
+
+[node name="Parallax2D2" type="Parallax2D" parent="." unique_id=2068728001]
+repeat_size = Vector2(512, 512)
+autoscroll = Vector2(0, 60)
+repeat_times = 7
+
+[node name="Background2" type="Sprite2D" parent="Parallax2D2" unique_id=86577705]
+texture = ExtResource("2_4g36q")
+
+[node name="PowerupSpawner" parent="." unique_id=1576011739 instance=ExtResource("3_pyyhd")]
+position = Vector2(500, 400)
+
+[node name="PlayerController" parent="." unique_id=572176088 instance=ExtResource("4_ocswt")]
+position = Vector2(500, 400)
+
+[node name="Control" type="Control" parent="." unique_id=1627813428]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="Score" type="Label" parent="Control" unique_id=1633744105]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_right = 769.0
+offset_bottom = 121.0
+grow_horizontal = 2
+theme = SubResource("Theme_k11dx")
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("6_i3w6b")
+
+[node name="EnemyManager" parent="." unique_id=1456131449 instance=ExtResource("7_us12v")]
+StartTimerWaitTime = 1.0
+
+[node name="PauseMenu" parent="." unique_id=662446836 instance=ExtResource("8_bkka4")]
+process_mode = 2

@@ -11,13 +11,11 @@ SpawnTimer = NodePath("SpawnTimer")
 PlayerOrbitsContainer = NodePath("PlayerOrbits")
 EnvironmentOrbitsContainer = NodePath("EnvironmentOrbits")
 EnemyContainer = NodePath("EnemyContainer")
-MaxEnemyCount = 1000
 PlayerOrbitEnemyScene = ExtResource("2_thm0t")
 EnvironmentOrbitEnemyScene = ExtResource("3_1eqb4")
 
 [node name="SpawnTimer" type="Timer" parent="." unique_id=297650743]
 wait_time = 0.1
-autostart = true
 
 [node name="EnemyContainer" type="Node" parent="." unique_id=832648660]
 
@@ -25,33 +23,23 @@ autostart = true
 
 [node name="OrbitPointGenerator" parent="PlayerOrbits" unique_id=1340243254 instance=ExtResource("3_kdjgt")]
 OrbitSpeed = 1.25
-OrbitPointCount = 5
+OrbitPointCount = 7
 OrbitPointDistance = 200.0
 
 [node name="OrbitPointGenerator2" parent="PlayerOrbits" unique_id=1937829038 instance=ExtResource("3_kdjgt")]
 OrbitSpeed = -1.0
-OrbitPointCount = 7
+OrbitPointCount = 13
 OrbitPointDistance = 300.0
 
 [node name="OrbitPointGenerator3" parent="PlayerOrbits" unique_id=1751977099 instance=ExtResource("3_kdjgt")]
 OrbitSpeed = 0.75
-OrbitPointCount = 11
+OrbitPointCount = 19
 OrbitPointDistance = 400.0
 
 [node name="OrbitPointGenerator4" parent="PlayerOrbits" unique_id=808899643 instance=ExtResource("3_kdjgt")]
 OrbitSpeed = -0.5
-OrbitPointCount = 17
+OrbitPointCount = 23
 OrbitPointDistance = 500.0
-
-[node name="OrbitPointGenerator5" parent="PlayerOrbits" unique_id=1949770449 instance=ExtResource("3_kdjgt")]
-OrbitSpeed = 0.3
-OrbitPointCount = 25
-OrbitPointDistance = 600.0
-
-[node name="OrbitPointGenerator6" parent="PlayerOrbits" unique_id=1094574009 instance=ExtResource("3_kdjgt")]
-OrbitSpeed = -0.3
-OrbitPointCount = 31
-OrbitPointDistance = 700.0
 
 [node name="EnvironmentOrbits" type="Node2D" parent="." unique_id=1727916854]
 

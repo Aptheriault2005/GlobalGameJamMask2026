@@ -21,4 +21,9 @@ public partial class Score : Label
 		SLabel.score += s;
 		SLabel.UpdateLabel();
 	}
+
+	public int GetScore()
+	{
+		return score;
+	}
 }
