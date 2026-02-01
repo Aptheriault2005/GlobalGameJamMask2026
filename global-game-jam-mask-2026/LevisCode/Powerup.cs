@@ -14,7 +14,7 @@ public partial class Powerup : Area2D
 		if (Position.Y >= 1080) QueueFree();
 	}
 	
-	public void BodyEntered(Node2D other)
+	public new void BodyEntered(Node2D other)
 	{
 		if (other.HasNode("PlayerTag"))
 		{

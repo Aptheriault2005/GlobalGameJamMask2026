@@ -4,6 +4,7 @@ using System;
 public partial class PlayerController : CharacterBody2D
 {
 	public const float Speed = 300.0f;
+	public static Vector2 exportPosition = Vector2.Zero;
 	[Export] private GhostbusterSprayPattern gbsp;
 	[Export] private SpiralSprayPattern ssp;
 	[Export] private PulseSprayPattern psp;
@@ -80,11 +81,18 @@ public partial class PlayerController : CharacterBody2D
 			pm.Visible = true;
 			GetTree().Paused = true;
 		}
+		
+		exportPosition = Position;
 	}
 	
 	public void SwapPowerup(int powerup)
 	{
 		sprayPattern = powerup;
 		Score.AddScore(100);
+	}
+	
+	public static Vector2 GetPlayerPosition()
+	{
+		return exportPosition;
 	}
 }

@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://djkkig0r3vhrg" path="res://Andrew/Scripts/Enemies/PlayerOrbitEnemy.cs" id="1_05q40"]
 [ext_resource type="Texture2D" uid="uid://6odd8ux8aaut" path="res://LevisArt/mask.png" id="2_05q40"]
 [ext_resource type="PackedScene" uid="uid://byt6pduwlenmf" path="res://Andrew/Scenes/Components/health_component.tscn" id="2_uigks"]
+[ext_resource type="PackedScene" uid="uid://iprlb7ce3uvv" path="res://LevisCode/homing_pattern.tscn" id="2_wc3ox"]
 [ext_resource type="PackedScene" uid="uid://8crl4hlg5d8t" path="res://Andrew/Scenes/Components/player_orbit_movement_component.tscn" id="3_05q40"]
 [ext_resource type="PackedScene" uid="uid://d4itax1j1mdo3" path="res://Andrew/Scenes/Components/hurt_box.tscn" id="5_4ajur"]
 
@@ -12,12 +13,14 @@ healthComponent = NodePath("HealthComponent")
 playerOrbitMovementComponent = NodePath("OrbitMovementComponent")
 metadata/enemy = false
 
+[node name="HomingPattern" parent="." unique_id=647468502 instance=ExtResource("2_wc3ox")]
+
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1044937737]
-modulate = Color(0, 0, 1, 1)
 texture = ExtResource("2_05q40")
 
-[node name="HealthComponent" parent="." unique_id=1188606346 instance=ExtResource("2_uigks")]
+[node name="HealthComponent" parent="." unique_id=1188606346 node_paths=PackedStringArray("modulateSprite") instance=ExtResource("2_uigks")]
 MaxHealth = 10.0
+modulateSprite = NodePath("../Sprite2D")
 
 [node name="OrbitMovementComponent" parent="." unique_id=683472997 node_paths=PackedStringArray("Enemy") instance=ExtResource("3_05q40")]
 Enemy = NodePath("..")

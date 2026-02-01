@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://iprlb7ce3uvv"]
+
+[ext_resource type="Script" uid="uid://doo8s4pbyo33e" path="res://LevisCode/HomingPattern.cs" id="1_nq752"]
+
+[node name="HomingPattern" type="Node" unique_id=647468502]
+script = ExtResource("1_nq752")
+
+[node name="Cooldown" type="Timer" parent="." unique_id=461128131]
+one_shot = true
