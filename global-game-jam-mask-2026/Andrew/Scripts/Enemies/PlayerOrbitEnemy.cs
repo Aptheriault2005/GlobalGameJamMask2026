@@ -12,10 +12,10 @@ public partial class PlayerOrbitEnemy : BaseEnemy
 		healthComponent.HealthChanged += OnHealthChanged;
 	}
 
-    public override void _ExitTree()
-    {
-        healthComponent.Death -= OnDeath;
+	public override void _ExitTree()
+	{
+		healthComponent.Death -= OnDeath;
 		healthComponent.HealthChanged -= OnHealthChanged;
-    }
+	}
 
 }
