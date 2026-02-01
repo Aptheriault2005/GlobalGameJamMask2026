@@ -21,6 +21,7 @@ public partial class ReturnGame : Button
 	
 	public override void _Pressed() 
 	{
+		SoundScene.sfxButton.Play();
 		GetTree().Paused = false;
 		pm.Visible = false;
 		

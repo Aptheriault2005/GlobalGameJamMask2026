@@ -14,6 +14,7 @@ public partial class VolumeButton : Button
 	}
 	
 	public async override void _Pressed() {
+		SoundScene.sfxButton.Play();
 		var tr = GetNode<TransitionScreen>("/root/TransitionScreen");
 		await tr.Transition("res://Matthew/Scenes/volume_screen.tscn");
 	}

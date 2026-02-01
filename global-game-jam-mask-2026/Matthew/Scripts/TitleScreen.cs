@@ -18,6 +18,7 @@ public partial class TitleScreen : Button
 	}
 	
 	public async override void _Pressed() {
+		SoundScene.sfxButton.Play();
 		Globals.Instance.Started = false;
 		if (GetTree().Paused) 
 		{

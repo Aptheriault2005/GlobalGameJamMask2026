@@ -14,6 +14,7 @@ public partial class BackButton : Button
 	}
 	
 	public async override void _Pressed() {
+		SoundScene.sfxButton.Play();
 		var tr = GetNode<TransitionScreen>("/root/TransitionScreen");
 		await tr.Transition(Globals.Instance.PrevScene);
 	}
