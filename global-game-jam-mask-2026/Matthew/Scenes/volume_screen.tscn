@@ -24,6 +24,7 @@ max_value = 1.0
 step = 0.001
 value = 1.0
 script = ExtResource("1_orlhx")
+busName = "Master"
 metadata/_edit_use_anchors_ = true
 
 [node name="MusicSlider" type="HSlider" parent="." unique_id=507421859]
@@ -41,6 +42,7 @@ max_value = 1.0
 step = 0.001
 value = 1.0
 script = ExtResource("2_aock2")
+busName = "Music"
 metadata/_edit_use_anchors_ = true
 
 [node name="SFXSlider" type="HSlider" parent="." unique_id=663050635]
@@ -58,15 +60,8 @@ max_value = 1.0
 step = 0.001
 value = 1.0
 script = ExtResource("3_y2bq2")
+busName = "Sound Effects"
 metadata/_edit_use_anchors_ = true
-
-[node name="MasterAudioStream" type="AudioStreamPlayer2D" parent="." unique_id=1800036171]
-
-[node name="MusicAudioStream" type="AudioStreamPlayer2D" parent="." unique_id=458889505]
-bus = &"Music"
-
-[node name="SFXAudioStream" type="AudioStreamPlayer2D" parent="." unique_id=470220870]
-bus = &"Sound Effects"
 
 [node name="MasterSliderLabel" type="RichTextLabel" parent="." unique_id=992951984]
 anchors_preset = 5
@@ -122,3 +117,7 @@ grow_vertical = 0
 theme_override_font_sizes/font_size = 40
 text = "Back"
 script = ExtResource("5_y2bq2")
+
+[connection signal="value_changed" from="MasterSlider" to="MasterSlider" method="_onValueChanged"]
+[connection signal="value_changed" from="MusicSlider" to="MusicSlider" method="_onValueChanged"]
+[connection signal="value_changed" from="SFXSlider" to="SFXSlider" method="_onValueChanged"]

@@ -3,13 +3,16 @@ using System;
 
 public partial class MasterSlider : HSlider
 {
-	int master;
+	
+	[Export] public String busName;
+	private int busIdx;
 	
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		master = AudioServer.GetBusIndex("Master");
-		AudioServer.SetBusVolumeDb(master, Mathf.LinearToDb(1));
+		busIdx = AudioServer.GetBusIndex(busName);
+		
+		this.Value = Mathf.DbToLinear(AudioServer.GetBusVolumeDb(busIdx));
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -17,7 +20,8 @@ public partial class MasterSlider : HSlider
 	{
 	}
 	
-	public void OnValueChanged(double value) {
-		AudioServer.SetBusVolumeDb(master, Mathf.LinearToDb((float) value));
+	private void _onValueChanged(float value){
+		AudioServer.SetBusVolumeDb(busIdx, Mathf.LinearToDb(value));
 	}
+	
 }
