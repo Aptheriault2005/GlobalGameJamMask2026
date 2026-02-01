@@ -35,6 +35,7 @@ bus = &"Sound Effects"
 
 [node name="SFXStreamShoot" type="AudioStreamPlayer" parent="." unique_id=28887055]
 stream = ExtResource("6_thty2")
+volume_db = -10.0
 bus = &"Sound Effects"
 
 [node name="SFXStreamGrape" type="AudioStreamPlayer" parent="." unique_id=2074430067]

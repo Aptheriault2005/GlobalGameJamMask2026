@@ -6,14 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://cnnr65rsw83at" path="res://LevisArt/bg-tile-hi.png" id="2_xv1y4"]
 [ext_resource type="Script" uid="uid://lugcrtobc635" path="res://Matthew/Scripts/QuitButton.cs" id="3_ig5kc"]
 [ext_resource type="Texture2D" uid="uid://djbe7ab0fnqyn" path="res://LevisArt/TitleEmblem.png" id="3_xv1y4"]
-[ext_resource type="Shader" uid="uid://c15k5dgt17wj2" path="res://test.gdshader" id="7_jx4ee"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_ptq4j"]
-shader = ExtResource("7_jx4ee")
-shader_parameter/wiggle = 0.03
-shader_parameter/wiggle_speed = 25.0
-shader_parameter/smear = 1.0
-shader_parameter/blur_samples = 15
 
 [node name="TitleScreen" type="CanvasLayer" unique_id=1609603487]
 
@@ -90,9 +82,3 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 58
 text = "Quit"
 script = ExtResource("3_ig5kc")
-
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1014289112]
-material = SubResource("ShaderMaterial_ptq4j")
-offset_right = 1920.0
-offset_bottom = 1080.0
-mouse_filter = 2

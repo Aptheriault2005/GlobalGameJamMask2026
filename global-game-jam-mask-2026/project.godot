@@ -10,10 +10,10 @@ config_version=5
 
 [application]
 
-config/name="GlobalGameJamMask2026"
+config/name="Reese Raccoon vs The Masquerade"
 run/main_scene="uid://c6cb0xbfc8lwc"
 config/features=PackedStringArray("4.6", "C#", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="uid://chnyk8bvmenf1"
 
 [audio]
 

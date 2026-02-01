@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://cynp74nwolklv"]
+
+[ext_resource type="Shader" uid="uid://c15k5dgt17wj2" path="res://test.gdshader" id="1_lwfcl"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ptq4j"]
+shader = ExtResource("1_lwfcl")
+shader_parameter/wiggle = 0.03
+shader_parameter/wiggle_speed = 25.0
+shader_parameter/smear = 0.50000002375
+shader_parameter/blur_samples = 5
+
+[node name="VHS" type="ColorRect" unique_id=890576358]
+material = SubResource("ShaderMaterial_ptq4j")
+offset_right = 1920.0
+offset_bottom = 1080.0
+mouse_filter = 2
