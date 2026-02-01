@@ -57,6 +57,7 @@ _data = {
 }
 
 [node name="TransitionScreen" type="CanvasLayer" unique_id=538797654]
+layer = 10
 script = ExtResource("1_prkjf")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1835329770]
