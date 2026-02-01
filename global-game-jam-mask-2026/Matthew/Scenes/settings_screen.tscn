@@ -1,17 +1,35 @@
 [gd_scene format=3 uid="uid://b0vxpqymybk7p"]
 
+[ext_resource type="Texture2D" uid="uid://cghau1lgfnuuh" path="res://LevisArt/bg-tile-low.png" id="1_bhnbd"]
 [ext_resource type="Script" uid="uid://bk2dbh0oy0w2a" path="res://Matthew/Scripts/ControlsButton.cs" id="1_lii5r"]
+[ext_resource type="Texture2D" uid="uid://cnnr65rsw83at" path="res://LevisArt/bg-tile-hi.png" id="2_8bdfo"]
 [ext_resource type="Script" uid="uid://vdeb372djkq5" path="res://Matthew/Scripts/VolumeButton.cs" id="2_ieuc7"]
 [ext_resource type="Script" uid="uid://lugcrtobc635" path="res://Matthew/Scripts/QuitButton.cs" id="3_1e15r"]
 [ext_resource type="Script" uid="uid://b4hs06cckm0wq" path="res://Matthew/Scripts/BackButton.cs" id="4_r3rfl"]
 
 [node name="SettingsScreen" type="CanvasLayer" unique_id=917333332]
 
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=148202953]
+repeat_size = Vector2(512, 512)
+autoscroll = Vector2(0, 30)
+repeat_times = 7
+
+[node name="Background1" type="Sprite2D" parent="Parallax2D" unique_id=1922077433]
+texture = ExtResource("1_bhnbd")
+
+[node name="Parallax2D2" type="Parallax2D" parent="." unique_id=1591527820]
+repeat_size = Vector2(512, 512)
+autoscroll = Vector2(0, 60)
+repeat_times = 7
+
+[node name="Background2" type="Sprite2D" parent="Parallax2D2" unique_id=1416740193]
+texture = ExtResource("2_8bdfo")
+
 [node name="CenterContainer" type="CenterContainer" parent="." unique_id=1685042075]
 anchors_preset = 10
 anchor_right = 1.0
-offset_top = 50.0
-offset_bottom = 113.0
+offset_top = 400.0
+offset_bottom = 463.0
 grow_horizontal = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer" unique_id=736688760]
@@ -35,8 +53,8 @@ anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -100.0
-offset_bottom = -100.0
+offset_top = -480.0
+offset_bottom = -380.0
 grow_horizontal = 2
 grow_vertical = 0
 size_flags_vertical = 8

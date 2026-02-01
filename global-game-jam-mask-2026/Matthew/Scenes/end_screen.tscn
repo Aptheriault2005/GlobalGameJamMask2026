@@ -1,12 +1,30 @@
 [gd_scene format=3 uid="uid://bhgq438e6t26j"]
 
 [ext_resource type="Script" uid="uid://b0pq1mgayy5tr" path="res://Matthew/Scripts/EndBaseScore.cs" id="1_640rh"]
+[ext_resource type="Texture2D" uid="uid://cghau1lgfnuuh" path="res://LevisArt/bg-tile-low.png" id="1_d60dt"]
 [ext_resource type="Script" uid="uid://cflsy7wrhymcs" path="res://Matthew/Scripts/TitleScreen.cs" id="1_la3vb"]
 [ext_resource type="Script" uid="uid://dewywf3g5beeb" path="res://Matthew/Scripts/TimeScore.cs" id="2_5qli2"]
 [ext_resource type="Script" uid="uid://lugcrtobc635" path="res://Matthew/Scripts/QuitButton.cs" id="2_640rh"]
+[ext_resource type="Texture2D" uid="uid://cnnr65rsw83at" path="res://LevisArt/bg-tile-hi.png" id="2_w4dcq"]
 [ext_resource type="Script" uid="uid://uywj3schuwxv" path="res://Matthew/Scripts/TotalScore.cs" id="3_8t88u"]
 
 [node name="EndScreen" type="CanvasLayer" unique_id=1451227434]
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=130955669]
+repeat_size = Vector2(512, 512)
+autoscroll = Vector2(0, 30)
+repeat_times = 7
+
+[node name="Background1" type="Sprite2D" parent="Parallax2D" unique_id=1845519871]
+texture = ExtResource("1_d60dt")
+
+[node name="Parallax2D2" type="Parallax2D" parent="." unique_id=1888692031]
+repeat_size = Vector2(512, 512)
+autoscroll = Vector2(0, 60)
+repeat_times = 7
+
+[node name="Background2" type="Sprite2D" parent="Parallax2D2" unique_id=1079154340]
+texture = ExtResource("2_w4dcq")
 
 [node name="CenterContainer" type="CenterContainer" parent="." unique_id=1763307640]
 anchors_preset = 15

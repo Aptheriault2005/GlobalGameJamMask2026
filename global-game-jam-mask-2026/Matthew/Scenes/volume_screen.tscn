@@ -3,7 +3,9 @@
 [ext_resource type="Script" uid="uid://dnul0g6tthr78" path="res://Matthew/Scripts/VolumeScreen.cs" id="1_aock2"]
 [ext_resource type="Script" uid="uid://ejj35wtfxshm" path="res://Matthew/Scripts/MasterSlider.cs" id="1_orlhx"]
 [ext_resource type="Script" uid="uid://dj6qveyoalboo" path="res://Matthew/Scripts/MusicSlider.cs" id="2_aock2"]
+[ext_resource type="Texture2D" uid="uid://cghau1lgfnuuh" path="res://LevisArt/bg-tile-low.png" id="3_8kh4d"]
 [ext_resource type="Script" uid="uid://3xkwtpuaol07" path="res://Matthew/Scripts/SfxSlider.cs" id="3_y2bq2"]
+[ext_resource type="Texture2D" uid="uid://cnnr65rsw83at" path="res://LevisArt/bg-tile-hi.png" id="4_616ul"]
 [ext_resource type="Script" uid="uid://b4hs06cckm0wq" path="res://Matthew/Scripts/BackButton.cs" id="5_y2bq2"]
 
 [node name="VolumeScreen" type="CanvasLayer" unique_id=737545509]
@@ -26,6 +28,22 @@ value = 0.5
 script = ExtResource("1_orlhx")
 busName = "Master"
 metadata/_edit_use_anchors_ = true
+
+[node name="Parallax2D" type="Parallax2D" parent="MasterSlider" unique_id=1747311499]
+repeat_size = Vector2(512, 512)
+autoscroll = Vector2(0, 30)
+repeat_times = 7
+
+[node name="Background1" type="Sprite2D" parent="MasterSlider/Parallax2D" unique_id=670037024]
+texture = ExtResource("3_8kh4d")
+
+[node name="Parallax2D2" type="Parallax2D" parent="MasterSlider" unique_id=2026279123]
+repeat_size = Vector2(512, 512)
+autoscroll = Vector2(0, 60)
+repeat_times = 7
+
+[node name="Background2" type="Sprite2D" parent="MasterSlider/Parallax2D2" unique_id=1734414476]
+texture = ExtResource("4_616ul")
 
 [node name="MusicSlider" type="HSlider" parent="." unique_id=507421859]
 anchors_preset = 14

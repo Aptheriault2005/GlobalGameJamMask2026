@@ -1,9 +1,11 @@
 [gd_scene format=3 uid="uid://cjwpbi4utbj87"]
 
 [ext_resource type="Script" uid="uid://b4june4pyaxj3" path="res://Matthew/Scripts/ControlsScreen.cs" id="1_lw34d"]
+[ext_resource type="Texture2D" uid="uid://cghau1lgfnuuh" path="res://LevisArt/bg-tile-low.png" id="2_74quo"]
 [ext_resource type="Script" uid="uid://knvm4d4slakw" path="res://Matthew/Scripts/RemapLeft.cs" id="2_ffnw4"]
 [ext_resource type="Script" uid="uid://b4hs06cckm0wq" path="res://Matthew/Scripts/BackButton.cs" id="2_j3dus"]
 [ext_resource type="Script" uid="uid://basj0bfad8msn" path="res://Matthew/Scripts/RemapRight.cs" id="3_ut3rf"]
+[ext_resource type="Texture2D" uid="uid://cnnr65rsw83at" path="res://LevisArt/bg-tile-hi.png" id="3_vt5cw"]
 [ext_resource type="Script" uid="uid://dy8v1mb46i6h8" path="res://Matthew/Scripts/WaitUserInput.cs" id="4_i7lls"]
 [ext_resource type="Script" uid="uid://bwj6lb0p4w07v" path="res://Matthew/Scripts/RemapUp.cs" id="4_r3wjj"]
 [ext_resource type="Script" uid="uid://duwqfaeksn5xq" path="res://Matthew/Scripts/RemapDown.cs" id="5_37v7y"]
@@ -11,6 +13,22 @@
 
 [node name="ControlsScreen" type="CanvasLayer" unique_id=1715792745]
 script = ExtResource("1_lw34d")
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=1616487495]
+repeat_size = Vector2(512, 512)
+autoscroll = Vector2(0, 30)
+repeat_times = 7
+
+[node name="Background1" type="Sprite2D" parent="Parallax2D" unique_id=472183260]
+texture = ExtResource("2_74quo")
+
+[node name="Parallax2D2" type="Parallax2D" parent="." unique_id=575105592]
+repeat_size = Vector2(512, 512)
+autoscroll = Vector2(0, 60)
+repeat_times = 7
+
+[node name="Background2" type="Sprite2D" parent="Parallax2D2" unique_id=881903946]
+texture = ExtResource("3_vt5cw")
 
 [node name="CenterContainer" type="CenterContainer" parent="." unique_id=1067645523]
 anchors_preset = 14

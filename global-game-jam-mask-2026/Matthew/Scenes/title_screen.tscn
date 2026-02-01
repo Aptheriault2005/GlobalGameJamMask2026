@@ -1,43 +1,83 @@
 [gd_scene format=3 uid="uid://c6cb0xbfc8lwc"]
 
+[ext_resource type="Texture2D" uid="uid://cghau1lgfnuuh" path="res://LevisArt/bg-tile-low.png" id="1_7xdoh"]
 [ext_resource type="Script" uid="uid://du5t6d8uo2bxe" path="res://Matthew/Scripts/StartButton.cs" id="1_ak2if"]
 [ext_resource type="Script" uid="uid://dheagwmtc8awr" path="res://Matthew/Scripts/SettingsButton.cs" id="2_ig5kc"]
+[ext_resource type="Texture2D" uid="uid://cnnr65rsw83at" path="res://LevisArt/bg-tile-hi.png" id="2_xv1y4"]
 [ext_resource type="Script" uid="uid://lugcrtobc635" path="res://Matthew/Scripts/QuitButton.cs" id="3_ig5kc"]
+[ext_resource type="Texture2D" uid="uid://djbe7ab0fnqyn" path="res://LevisArt/TitleEmblem.png" id="3_xv1y4"]
 
 [node name="TitleScreen" type="CanvasLayer" unique_id=1609603487]
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=417708679]
+repeat_size = Vector2(512, 512)
+autoscroll = Vector2(0, 30)
+repeat_times = 7
+
+[node name="Background1" type="Sprite2D" parent="Parallax2D" unique_id=1842248143]
+texture = ExtResource("1_7xdoh")
+
+[node name="Parallax2D2" type="Parallax2D" parent="." unique_id=1373651612]
+repeat_size = Vector2(512, 512)
+autoscroll = Vector2(0, 60)
+repeat_times = 7
+
+[node name="Background2" type="Sprite2D" parent="Parallax2D2" unique_id=726029611]
+texture = ExtResource("2_xv1y4")
 
 [node name="Control" type="Control" parent="." unique_id=1654326532]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 25.0
+offset_top = 25.0
+offset_right = -25.0
+offset_bottom = -25.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(50, 50)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control" unique_id=2118192441]
+[node name="HBoxContainer" type="VBoxContainer" parent="Control" unique_id=1541435387]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -393.5
+offset_top = -118.0
+offset_right = 393.5
+offset_bottom = 118.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Control/HBoxContainer" unique_id=956965520]
+layout_mode = 2
+texture = ExtResource("3_xv1y4")
+
+[node name="HSeparator" type="HSeparator" parent="Control/HBoxContainer" unique_id=1279613424]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="HBoxContainer" parent="Control/HBoxContainer" unique_id=748938759]
+layout_mode = 2
 theme_override_constants/separation = 100
 alignment = 1
 
-[node name="StartButton" type="Button" parent="Control/VBoxContainer" unique_id=107271750]
+[node name="StartButton" type="Button" parent="Control/HBoxContainer/VBoxContainer" unique_id=107271750]
 layout_mode = 2
 theme_override_font_sizes/font_size = 58
 text = "Start"
 script = ExtResource("1_ak2if")
 
-[node name="SettingsButton" type="Button" parent="Control/VBoxContainer" unique_id=1285234148]
+[node name="SettingsButton" type="Button" parent="Control/HBoxContainer/VBoxContainer" unique_id=1285234148]
 layout_mode = 2
 theme_override_font_sizes/font_size = 58
 text = "Settings"
 script = ExtResource("2_ig5kc")
 
-[node name="QuitButton" type="Button" parent="Control/VBoxContainer" unique_id=679189582]
+[node name="QuitButton" type="Button" parent="Control/HBoxContainer/VBoxContainer" unique_id=679189582]
 layout_mode = 2
 theme_override_font_sizes/font_size = 58
 text = "Quit"
