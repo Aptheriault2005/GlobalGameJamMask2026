@@ -23,6 +23,7 @@ public partial class Powerup : Area2D
 			{
 				p.SwapPowerup(value);
 			} else GD.Print("NULL NULL NULL");
+			SoundScene.sfxGrape.Play();
 			QueueFree();
 		}
 	}

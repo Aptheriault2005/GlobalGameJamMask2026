@@ -11,6 +11,22 @@
 [node name="VolumeScreen" type="CanvasLayer" unique_id=737545509]
 script = ExtResource("1_aock2")
 
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=1747311499]
+repeat_size = Vector2(512, 512)
+autoscroll = Vector2(0, 30)
+repeat_times = 7
+
+[node name="Background1" type="Sprite2D" parent="Parallax2D" unique_id=670037024]
+texture = ExtResource("3_8kh4d")
+
+[node name="Parallax2D2" type="Parallax2D" parent="." unique_id=2026279123]
+repeat_size = Vector2(512, 512)
+autoscroll = Vector2(0, 60)
+repeat_times = 7
+
+[node name="Background2" type="Sprite2D" parent="Parallax2D2" unique_id=1734414476]
+texture = ExtResource("4_616ul")
+
 [node name="MasterSlider" type="HSlider" parent="." unique_id=2066449296]
 anchors_preset = 14
 anchor_top = 0.5
@@ -28,22 +44,6 @@ value = 0.5
 script = ExtResource("1_orlhx")
 busName = "Master"
 metadata/_edit_use_anchors_ = true
-
-[node name="Parallax2D" type="Parallax2D" parent="MasterSlider" unique_id=1747311499]
-repeat_size = Vector2(512, 512)
-autoscroll = Vector2(0, 30)
-repeat_times = 7
-
-[node name="Background1" type="Sprite2D" parent="MasterSlider/Parallax2D" unique_id=670037024]
-texture = ExtResource("3_8kh4d")
-
-[node name="Parallax2D2" type="Parallax2D" parent="MasterSlider" unique_id=2026279123]
-repeat_size = Vector2(512, 512)
-autoscroll = Vector2(0, 60)
-repeat_times = 7
-
-[node name="Background2" type="Sprite2D" parent="MasterSlider/Parallax2D2" unique_id=1734414476]
-texture = ExtResource("4_616ul")
 
 [node name="MusicSlider" type="HSlider" parent="." unique_id=507421859]
 anchors_preset = 14

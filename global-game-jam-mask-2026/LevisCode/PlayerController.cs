@@ -28,17 +28,20 @@ public partial class PlayerController : CharacterBody2D
 	{
 		playerSprite = GetNode<AnimatedSprite2D>("Sprite2D");
 		healthComponent.Death += OnDeath;
+		healthComponent.HealthChanged += OnHealthChanged;
 	}
 
 	public override void _ExitTree()
 	{
 		healthComponent.Death -= OnDeath;
+		healthComponent.HealthChanged -= OnHealthChanged;
 	}
 
 	public override void _PhysicsProcess(double delta)
 	{
 		if (Input.IsActionPressed("fire"))
 		{
+			PlayShootSFX();
 			switch (sprayPattern)
 			{
 				case 0:
@@ -103,10 +106,21 @@ public partial class PlayerController : CharacterBody2D
 		return exportPosition;
 	}
 	
+	public void OnHealthChanged(float amount) {
+		SoundScene.sfxHit.Play();
+	}
+	
 	public void OnDeath()
 	{
+		SoundScene.sfxDeath.Play();
 		Globals.Instance.Score = int.Parse(Score.SLabel.GetText());
 		Globals.Instance.ElapsedTime = TimerLabel.Elapsed;
 		GetTree().ChangeSceneToFile("res://Matthew/Scenes/end_screen.tscn");
+	}
+	
+	private void PlayShootSFX(){
+		if (!SoundScene.sfxShoot.IsPlaying()) {
+			SoundScene.sfxShoot.Play();
+		}
 	}
 }

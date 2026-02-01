@@ -6,8 +6,6 @@
 [ext_resource type="AudioStream" uid="uid://ulkyy682bn4u" path="res://Matthew/Sounds/SFX/hit.wav" id="4_oobh2"]
 [ext_resource type="AudioStream" uid="uid://bj37k8bjoiubl" path="res://Matthew/Sounds/SFX/player_death_downer.wav" id="5_nn01e"]
 [ext_resource type="AudioStream" uid="uid://dforrkmwr75db" path="res://Matthew/Sounds/SFX/short_shooting(1s).wav" id="6_thty2"]
-[ext_resource type="AudioStream" uid="uid://csnbptk4bkdn0" path="res://Matthew/Sounds/SFX/mid_shooting(2s).wav" id="7_1cpwh"]
-[ext_resource type="AudioStream" uid="uid://bogp0sapb7qqn" path="res://Matthew/Sounds/SFX/long_shooting(3s).wav" id="8_rod1s"]
 [ext_resource type="AudioStream" uid="uid://bg0hsd5bfitgr" path="res://Matthew/Sounds/SFX/level_up.wav" id="9_1cpwh"]
 
 [node name="SoundScene" type="Node" unique_id=216637123]
@@ -35,16 +33,8 @@ bus = &"Sound Effects"
 stream = ExtResource("5_nn01e")
 bus = &"Sound Effects"
 
-[node name="SFXStreamSmallShoot" type="AudioStreamPlayer" parent="." unique_id=28887055]
+[node name="SFXStreamShoot" type="AudioStreamPlayer" parent="." unique_id=28887055]
 stream = ExtResource("6_thty2")
-bus = &"Sound Effects"
-
-[node name="SFXStreamMidShoot" type="AudioStreamPlayer" parent="." unique_id=1767133662]
-stream = ExtResource("7_1cpwh")
-bus = &"Sound Effects"
-
-[node name="SFXStreamLongShoot" type="AudioStreamPlayer" parent="." unique_id=1224142473]
-stream = ExtResource("8_rod1s")
 bus = &"Sound Effects"
 
 [node name="SFXStreamGrape" type="AudioStreamPlayer" parent="." unique_id=2074430067]
