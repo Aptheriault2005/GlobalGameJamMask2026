@@ -23,8 +23,9 @@ public partial class ControlsButton : Button
 	{
 	}
 	
-	public override void _Pressed() {
-		GetTree().ChangeSceneToFile("res://Matthew/Scenes/controls_screen.tscn");
+	public async override void _Pressed() {
+		var tr = GetNode<TransitionScreen>("/root/TransitionScreen");
+		await tr.Transition("res://Matthew/Scenes/controls_screen.tscn");
 	}
 	
 }

@@ -7,7 +7,7 @@
 [ext_resource type="Script" uid="uid://codqjpcxewftc" path="res://LevisCode/Score.cs" id="5_hew2x"]
 [ext_resource type="FontFile" uid="uid://bbogjk5lkt8nt" path="res://Matthew/Fonts/MainFont.fnt" id="5_p5dtc"]
 [ext_resource type="PackedScene" uid="uid://b00xfak8t2663" path="res://Andrew/Scenes/Enemies/enemy_manager.tscn" id="7_k11dx"]
-[ext_resource type="PackedScene" path="res://Matthew/Scenes/pause_menu.tscn" id="8_70ewo"]
+[ext_resource type="PackedScene" uid="uid://bqp5umf1lmamp" path="res://Matthew/Scenes/pause_menu.tscn" id="8_70ewo"]
 
 [sub_resource type="Theme" id="Theme_k11dx"]
 default_font = ExtResource("5_p5dtc")
@@ -34,8 +34,9 @@ texture = ExtResource("2_e5sw1")
 [node name="PowerupSpawner" parent="." unique_id=1576011739 instance=ExtResource("1_16e2b")]
 position = Vector2(500, 400)
 
-[node name="PlayerController" parent="." unique_id=572176088 instance=ExtResource("1_sx6i8")]
+[node name="PlayerController" parent="." unique_id=572176088 node_paths=PackedStringArray("pm") instance=ExtResource("1_sx6i8")]
 position = Vector2(500, 400)
+pm = NodePath("../PauseMenu")
 
 [node name="Control" type="Control" parent="." unique_id=1627813428]
 layout_mode = 3

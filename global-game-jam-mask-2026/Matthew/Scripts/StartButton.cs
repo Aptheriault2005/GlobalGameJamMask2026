@@ -14,8 +14,9 @@ public partial class StartButton : Button
 	{
 	}
 	
-	public override void _Pressed() {
-		GetTree().ChangeSceneToFile("res://LevisCode/levis_gym.tscn");
+	public async override void _Pressed() {
+		var tr = GetNode<TransitionScreen>("/root/TransitionScreen");
+		await tr.Transition("res://LevisCode/levis_gym.tscn");
 		Globals.Instance.Started = true;
 	}
 }
