@@ -23,5 +23,10 @@ public partial class ReturnGame : Button
 	{
 		GetTree().Paused = false;
 		pm.Visible = false;
+		
+		//All below are temporary - just testing purposes only
+		//Globals.Instance.Score = int.Parse(Score.SLabel.GetText());
+		//Globals.Instance.ElapsedTime = TimerLabel.Elapsed;
+		//GetTree().ChangeSceneToFile("res://Matthew/Scenes/end_screen.tscn");
 	}
 }

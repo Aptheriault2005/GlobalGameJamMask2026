@@ -6,6 +6,8 @@ public partial class Globals : Node
 {
 	public static Globals Instance {get; private set;}
 	public string PrevScene {get; set;}
+	public int Score {get; set;}
+	public double ElapsedTime {get; set;}
 	
 	//Better way?
 	

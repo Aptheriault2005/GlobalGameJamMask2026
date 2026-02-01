@@ -17,13 +17,14 @@ public partial class TitleScreen : Button
 	{
 	}
 	
-	public override void _Pressed() {
+	public async override void _Pressed() {
 		Globals.Instance.Started = false;
 		if (GetTree().Paused) 
 		{
 			GetTree().Paused = false;
 		}
-		GetTree().ChangeSceneToFile("res://Matthew/Scenes/title_screen.tscn");
 		Globals.Instance.PrevScene = "res://Matthew/Scenes/title_screen.tscn";
+		var tr = GetNode<TransitionScreen>("/root/TransitionScreen");
+		await tr.Transition("res://Matthew/Scenes/title_screen.tscn");
 	}
 }
